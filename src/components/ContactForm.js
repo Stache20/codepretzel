@@ -1,0 +1,110 @@
+import React, { useState } from "react";
+
+const FORM_ENDPOINT = ""; // TODO - fill on the later step
+
+const ContactForm = () => {
+  const [submitted, setSubmitted] = useState(false);
+  const handleSubmit = () => {
+    setTimeout(() => {
+      setSubmitted(true);
+    }, 100);
+  };
+
+  if (submitted) {
+    return (
+      <>
+        <div className="text-2xl">Thank you!</div>
+        <div className="text-md">We'll be in touch soon.</div>
+      </>
+    );
+  }
+
+  return (
+    
+    <div className='contactForm'>
+    <form
+      action={FORM_ENDPOINT}
+      onSubmit={handleSubmit}
+      method="POST"
+      target="_blank"
+    >
+      <div className="mb-3 pt-0">
+        <input
+          type="text"
+          placeholder="First Name"
+          name="fName"
+          style={{ color: 'black' }}
+          className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+          required
+        />
+      </div>
+      <div className="mb-3 pt-0">
+        <input
+          type="text"
+          placeholder="Last Name"
+          name="lName"
+          style={{ color: 'black' }}
+          className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+          required
+        />
+      </div>
+      <div className="mb-3 pt-0">
+        <input
+          type="email"
+          placeholder="Email"
+          name="email"
+          style={{ color: 'black' }}
+          className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+          required
+          
+        />
+      </div>
+      
+      <div className="mb-3 pt-0">
+        <input
+          type="tel"
+          pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+          placeholder="Phone Number"
+          name="number"
+          style={{ color: 'black' }}
+          className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+          required
+        /><p  style={{ color: 'grey' }} >Format 123-456-7890</p>
+      </div>
+     
+
+      <div className='mb-3 pt-0'>
+      <select className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full" 
+      placeHolder='Select Service' id="service" name="service" style={{ color: 'black' }}>
+      <option  value="" disabled selected>Select Service</option>
+  <option value="website">Website</option>
+  <option  value="webApp">Web Application</option>
+  <option value="mercedes">Code adjustment</option>
+  
+</select>
+      </div>
+      <div className="mb-3 pt-0">
+        <textarea
+          placeholder="Please describe as best as you can what you are looking for. Please let me know your preferred way of contact and availabilty"
+          name="message"
+          style={{ color: 'black'
+           }}
+          className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+          required
+        />
+      </div>
+      <div className="mb-3 pt-0">
+        <button
+          className="bg-blue-500  active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+          type="submit"
+          style={{ color: 'white' }}
+        >
+         Submit here
+        </button>
+      </div>
+    </form>
+    </div>
+  );
+};
+
+export default ContactForm;

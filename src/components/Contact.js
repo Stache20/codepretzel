@@ -10,8 +10,9 @@ function Contact() {
         <div>
         <Header/>
        <div className='rowC'>
+       <div className='mobile'>
         <CodePretzelLogo width='300px' height='300px'/>
-       
+        </div>
         <ContactForm/>
         </div>
         <Footer/> 

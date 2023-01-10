@@ -52,14 +52,15 @@ const ContactForm = () => {
 
   return (
     
-    <div className='contactForm'>
+    <div className=''>
     <form
       action={FORM_ENDPOINT}
       onSubmit={handleSubmit}
       method="POST"
       target="_blank"
+      className=''
     >
-      <div className="mb-3 pt-0">
+      <div className="mb-3 pt-0 ">
         <input
           type="text"
           name="first_name"
@@ -137,7 +138,7 @@ const ContactForm = () => {
 
           style={{ color: 'black'
            }}
-          className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+          className="request px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
           required
         />
       </div>

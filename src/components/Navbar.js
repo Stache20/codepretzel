@@ -16,7 +16,7 @@ function Header() {
             <NavDropdown
               id="nav-dropdown-dark-example"
               title="CodePretzel"
-            
+
             >
             <NavDropdown.Item href="/">
                 Home
@@ -25,7 +25,6 @@ function Header() {
               <NavDropdown.Item href="/about">
                 About
               </NavDropdown.Item>
-              <NavDropdown.Item href="/references">References</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/contact">
                 Contact

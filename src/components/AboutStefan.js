@@ -8,11 +8,11 @@ function AboutStefan() {
     return(
         <div>
 
-        <div className='title'>
+        <div className='about title text-center'>
         <h2>What's a CodePretzel?</h2>
         </div>
        
-       <div class="row about">
+       <div class="container d-flex justify-content-center aboutContent">
        <div class="col">
          Photo
        </div>

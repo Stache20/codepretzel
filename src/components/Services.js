@@ -1,17 +1,16 @@
-import React from 'react'
-import Header from './Navbar'
-import Footer from './Footer'
-import ServiceContent from './ServiceContent'
+import React from "react";
+import Header from "./Navbar";
+import Footer from "./Footer";
+import ServiceContent from "./ServiceContent";
 
 function Services() {
-
-    return(
-        <div>
-        <Header/>
-        <ServiceContent/>
-        <Footer/> 
-        </div>
-    )
+  return (
+    <div>
+      <Header />
+      <ServiceContent />
+      <Footer />
+    </div>
+  );
 }
 
-export default Services
+export default Services;

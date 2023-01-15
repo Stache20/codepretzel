@@ -1,39 +1,39 @@
-import React from 'react'
-import Header from './Navbar'
-import Footer from './Footer'
-
+import React from "react";
+import Header from "./Navbar";
+import Footer from "./Footer";
 
 function AboutStefan() {
-
-    return(
-        <div>
-
-        <div className='about title text-center'>
+  return (
+    <div>
+      <div className="about title text-center">
         <h2>What's a CodePretzel?</h2>
-        </div>
-       
-       <div class="container d-flex justify-content-center aboutContent">
-       <div class="col">
-         Photo
-       </div>
-       <div class="col">
-         <h4>Short</h4>
-         <br>
-         </br>
-         <p>A man and his computer!</p>
-         <p>My name is Stefan and since I was a little Child I was absest with computers. Computer games, a website toolkid I had it all. This passion helps me delivering the solution in need</p>
-       </div>
-       <div class="col">
-       <h4>Long</h4>
-       <p>Born in Bavaria Germany and here with the Coding solution just for you. Full Stack Development, no matter if webside, application or anything in between. </p>
-       <br></br>
-       <p>With the help of Javascript, React, Bootstrap, Jquery and many</p>
-       </div>
-     </div>
+      </div>
 
-     </div>
-       
-    )
+      <div className="container d-flex justify-content-center aboutContent">
+        <div className="col">Photo</div>
+        <div className="col">
+          <h4>Short</h4>
+          <br></br>
+          <p>A man and his computer!</p>
+          <p>
+            My name is Stefan and since I was a little Child I was absest with
+            computers. Computer games, a website toolkid I had it all. This
+            passion helps me delivering the solution in need
+          </p>
+        </div>
+        <div className="col">
+          <h4>Long</h4>
+          <p>
+            Born in Bavaria Germany and here with the Coding solution just for
+            you. Full Stack Development, no matter if webside, application or
+            anything in between.{" "}
+          </p>
+          <br></br>
+          <p>With the help of Javascript, React, Bootstrap, Jquery and many</p>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default AboutStefan
+export default AboutStefan;

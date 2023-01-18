@@ -3,7 +3,6 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import CodePretzelLogo from "./CodePretzelLogo";
-import Linkedin from "./Linkedin";
 
 function Header() {
   return (

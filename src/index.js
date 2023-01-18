@@ -6,7 +6,6 @@ import "./style.css";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/js/dist/dropdown";
-import { Button, ButtonGroup, Dropdown } from "react-bootstrap";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Services from "./components/Services";
 import About from "./components/About";

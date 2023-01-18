@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "./Navbar";
 import Footer from "./Footer";
 import ContactForm from "./ContactForm";

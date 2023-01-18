@@ -73,6 +73,14 @@ textarea {
   padding-right: 15%;
 }
 
+.box {
+  padding-top: 10%;
+  padding-bottom: 10%;
+  padding-left: 20%;
+  padding-right: 20%;
+  text-align: center;
+}
+
 .divider__arrow {
   font-size: 5rem;
   font-weight: 400;
@@ -99,5 +107,14 @@ textarea {
 
   body {
     width: 100%;
+  }
+
+  .aboutContent{
+    padding-top: 10%;
+  }
+  .mobileSpace {
+    padding-top: 20%;
+    padding-bottom: 15%;
+    text-align: center;
   }
 }

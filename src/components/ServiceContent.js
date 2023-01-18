@@ -14,7 +14,7 @@ function ServiceContent() {
 
 
   const fadeIn = {
-    visible: { opacity: 1,  transition: { delay: 1 } },
+    visible: { opacity: 1,  transition: { delay: 0.5 } },
     hidden: { opacity: 0,  },
   };
   const control = useAnimation();

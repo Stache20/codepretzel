@@ -26,7 +26,7 @@ function Home() {
   return (
     <div className="coverPage">
       <main role="main" className="inner cover text-center">
-        <div className="box">
+        <div className="">
           <CodePretzel height="300px" weight="300px" />
         </div>
         <br></br>

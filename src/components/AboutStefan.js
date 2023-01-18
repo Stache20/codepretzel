@@ -5,13 +5,13 @@ import Footer from "./Footer";
 function AboutStefan() {
   return (
     <div>
-      <div className="about title text-center">
+      <div className="mobileSpace about title text-center">
         <h2>What's a CodePretzel?</h2>
       </div>
 
-      <div className="container d-flex justify-content-center aboutContent">
-        <div className="col">Photo</div>
-        <div className="col">
+      <div className="container-fluid row d-flex justify-content-center aboutContent">
+        <div className="mobileSpace col-sm">Photo</div>
+        <div className="mobileSpace col-sm">
           <h4>Short</h4>
           <p>A man and his computer!</p>
           <p>
@@ -25,7 +25,7 @@ function AboutStefan() {
           I also love how coding has enabled me to collaborate with people from all over the world, 
             sharing ideas and working together to create something amazing.</p>
         </div>
-        <div className="col">
+        <div className=" mobileSpace col-sm">
           <h4>Long</h4>
           <p>
             Hi I'm Stefan! The face behind CodePretzel.<br></br> <br></br>As a full stack web developer, I am a highly motivated individual who is passionate about creating innovative and user-friendly web applications. {" "}

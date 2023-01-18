@@ -10,7 +10,7 @@ function AboutStefan() {
       </div>
 
       <div className="container-fluid row d-flex justify-content-center aboutContent">
-        <div className="mobileSpace col-sm">Photo</div>
+        <div className="mobileSpace col-sm"><img src={require("../images/meImg.png")} alt='ownerPhoto'></img></div>
         <div className="mobileSpace col-sm">
           <h4>Short</h4>
           <p>A man and his computer!</p>

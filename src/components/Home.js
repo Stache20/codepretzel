@@ -8,7 +8,7 @@ function Home() {
     show: {
       opacity: 1,
       transition: {
-        delay: 1.5,
+        delay: 1,
       },
     },
   };
@@ -18,7 +18,7 @@ function Home() {
     show: {
       opacity: 1,
       transition: {
-        delay: 3,
+        delay: 2,
       },
     },
   };

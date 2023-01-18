@@ -12,9 +12,10 @@ function ServiceContent() {
     scroll && scroll.scrollIntoView({ behavior: "smooth" });
   }
 
+
   const fadeIn = {
-    visible: { opacity: 1, scale: 1, transition: { duration: 1 } },
-    hidden: { opacity: 0, scale: 0 },
+    visible: { opacity: 1,  transition: { delay: 1 } },
+    hidden: { opacity: 0,  },
   };
   const control = useAnimation();
   const [ref, inView] = useInView();
@@ -27,16 +28,48 @@ function ServiceContent() {
     }
   }, [control, inView]);
 
+  const title = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {delay: 0.5,
+      },
+    },
+  };
+
+  const titleSecond = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {delay: 1,
+      },
+    },
+  };
+
+  const titleThird = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {delay: 2,
+      },
+    },
+  };
+
   return (
     <div className="container text-center">
       <div className="serviceBox">
+      <motion.div variants={title} initial="hidden" animate="show">
         <h1>A Solution for every need.</h1>
+        </motion.div>
         <br></br>
+        <motion.div variants={titleSecond} initial="hidden" animate="show">
         <p>
           Offering Full Stack Web Development to get the maximum out of your web
           presents.
         </p>
+        </motion.div>
         <br></br>
+        <motion.div variants={titleThird} initial="hidden" animate="show">
         <p>
           At CodePretzel, we offer a full suite of web development and software
           engineering services. Our full stack developers have the experience
@@ -59,6 +92,7 @@ function ServiceContent() {
             d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"
           ></path>
         </svg>
+        </motion.div>
       </div>
 
       <motion.div

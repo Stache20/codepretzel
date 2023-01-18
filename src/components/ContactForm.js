@@ -59,8 +59,7 @@ const ContactForm = () => {
             value={toSend.first_name}
             onChange={handleChange}
             placeholder="First Name"
-            style={{ color: "black" }}
-            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-black rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
             required
           />
         </div>
@@ -71,8 +70,7 @@ const ContactForm = () => {
             onChange={handleChange}
             placeholder="Last Name"
             name="last_name"
-            style={{ color: "black" }}
-            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-black rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
             required
           />
         </div>
@@ -83,8 +81,7 @@ const ContactForm = () => {
             onChange={handleChange}
             placeholder="Email"
             name="email"
-            style={{ color: "black" }}
-            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-black rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
             required
           />
         </div>
@@ -92,13 +89,12 @@ const ContactForm = () => {
         <div className="mb-3 pt-0">
           <input
             type="tel"
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
             value={toSend.phone_number}
             onChange={handleChange}
             placeholder="Phone Number"
             name="phone_number"
-            style={{ color: "black" }}
-            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-black rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
             required
           />
           <p style={{ color: "grey" }}>Format 123-456-7890</p>
@@ -106,13 +102,12 @@ const ContactForm = () => {
 
         <div className="mb-3 pt-0">
           <select
-            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+            className="px-3 py-3 relative bg-black  rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
             placeHolder="Select Service"
             id="service"
             name="service"
-            style={{ color: "black" }}
           >
-            <option value="" disabled selected>
+            <option style={{color: "grey"}} value="" disabled selected>
               Select Service
             </option>
             <option value="website">Website</option>
@@ -120,20 +115,19 @@ const ContactForm = () => {
             <option value="mercedes">Code adjustment</option>
           </select>
         </div>
-        <div className="mb-3 pt-0">
+        <div className="mb-3 pt-0 ">
           <textarea
             placeholder="Please describe as best as you can what you are looking for. Please let me know your preferred way of contact and availabilty"
             name="message"
             value={toSend.message}
             onChange={handleChange}
-            style={{ color: "black" }}
-            className="request px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-white bg-white rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+            className="request px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-black rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
             required
           />
         </div>
         <div className="mb-3 pt-0">
           <button
-            className="bg-blue-500  active:bg-blue-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+            className="bg-black  active:bg-black font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
             type="submit"
             style={{ color: "white" }}
           >

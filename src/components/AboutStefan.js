@@ -13,23 +13,27 @@ function AboutStefan() {
         <div className="col">Photo</div>
         <div className="col">
           <h4>Short</h4>
-          <br></br>
           <p>A man and his computer!</p>
           <p>
-            My name is Stefan and since I was a little Child I was absest with
-            computers. Computer games, a website toolkid I had it all. This
-            passion helps me delivering the solution in need
+            My name is Stefan and I code!<br></br>
+           I code because I enjoy the challenge of problem solving and creating something from nothing.
+           
+          
           </p>
+          <br></br>
+          <p>It's very satisfying to take an idea and turn it into a functioning program. 
+          I also love how coding has enabled me to collaborate with people from all over the world, 
+            sharing ideas and working together to create something amazing.</p>
         </div>
         <div className="col">
           <h4>Long</h4>
           <p>
-            Born in Bavaria Germany and here with the Coding solution just for
-            you. Full Stack Development, no matter if webside, application or
-            anything in between.{" "}
+            Hi I'm Stefan! The face behind CodePretzel.<br></br> <br></br>As a full stack web developer, I am a highly motivated individual who is passionate about creating innovative and user-friendly web applications. {" "}
           </p>
           <br></br>
-          <p>With the help of Javascript, React, Bootstrap, Jquery and many</p>
+          <p>I have a strong background in both front-end and back-end development, and I am comfortable working with a variety of development tools and frameworks, such as HTML, CSS, JavaScript, React, Node.js, and MongoDB.</p>
+          <br></br>
+          <p> I am also knowledgeable in the areas of UI/UX design, software architecture, and cloud computing. My goal is to develop websites and web applications that are both aesthetically pleasing and functionally robust. I am constantly striving to stay ahead of the curve and am always looking for ways to improve my development process.</p>
         </div>
       </div>
     </div>

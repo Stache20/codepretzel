@@ -1,5 +1,5 @@
 * {
-  background-color: #2c3e50;
+  background-color: #000000;
   color: white;
 }
 
@@ -12,7 +12,7 @@ body::before {
   display: block;
   content: "";
   height: 60px; /* or whatever */
-  background-color: #2c3e50;
+  background-color: #000000;
 }
 
 .coverPage {
@@ -26,6 +26,10 @@ body::before {
   vertical-align: middle;
   width: 100px;
   height: 100px;
+  border-radius: 50%;
+}
+
+.stefanImg {
   border-radius: 50%;
 }
 
@@ -84,7 +88,9 @@ textarea {
 .divider__arrow {
   font-size: 5rem;
   font-weight: 400;
-  margin-top: 19%;
+  margin-top: 5%;
+  margin-bottom: 15%;
+
 }
 
 @media screen and (max-width: 680px) {

@@ -1,5 +1,5 @@
 import React from "react";
-import CodePretzel from "./CodePretzelLogo";
+import WebPretzelLogo from "./WebPretzelLogo";
 import Linkedin from "./Linkedin";
 
 function Footer() {
@@ -8,7 +8,7 @@ function Footer() {
       <div className="inner">
         <p>
           {" "}
-          <CodePretzel height="30px" weight="30px" /> CodePretzel by Stefan
+          <WebPretzelLogo height="30px" weight="30px" /> WebPretzel by Stefan
           Stahuber <Linkedin />
         </p>
       </div>

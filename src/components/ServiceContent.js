@@ -71,7 +71,7 @@ function ServiceContent() {
         <br></br>
         <motion.div variants={titleThird} initial="hidden" animate="show">
         <p>
-          At CodePretzel, we offer a full suite of web development and software
+          At WebPretzel, we offer a full suite of web development and software
           engineering services. Our full stack developers have the experience
           and expertise to create custom websites and applications that meet
           your exact requirements.

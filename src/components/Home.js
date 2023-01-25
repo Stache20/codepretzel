@@ -1,5 +1,5 @@
 import React from "react";
-import CodePretzel from "./CodePretzelLogo";
+import WebPretzelLogo from "./WebPretzelLogo";
 import { motion } from "framer-motion";
 
 function Home() {
@@ -27,7 +27,7 @@ function Home() {
     <div className="coverPage">
       <main role="main" className="inner cover text-center">
         <div className="">
-          <CodePretzel height="300px" weight="300px" />
+          <WebPretzelLogo height="300px" weight="300px" />
         </div>
         <br></br>
         <br></br>

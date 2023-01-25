@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./Navbar";
 import Footer from "./Footer";
 import ContactForm from "./ContactForm";
-import CodePretzelLogo from "./CodePretzelLogo";
+import WebPretzelLogo from "./WebPretzelLogo";
 
 function Contact() {
   return (
@@ -18,7 +18,7 @@ function Contact() {
       </div>
       <div className="rowC">
         <div className="mobile">
-          <CodePretzelLogo width="300px" height="300px" />
+          <WebPretzelLogo width="300px" height="300px" />
         </div>
         <ContactForm />
       </div>

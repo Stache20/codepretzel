@@ -12,7 +12,7 @@ function AboutStefan() {
   return (
     <div>
       <div className="mobileSpace about title text-center">
-        <h1>What's a CodePretzel?</h1>
+        <h1>What's a WebPretzel?</h1>
       </div>
 
       <div className="justify-content-center aboutContent">

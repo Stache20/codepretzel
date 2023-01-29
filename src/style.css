@@ -48,6 +48,8 @@ body::before {
 }
 
 .aboutContent {
+  padding-left: 10%;
+  padding-right: 10%;
   padding-bottom: 10%;
 }
 
@@ -93,7 +95,9 @@ textarea {
 
 }
 
-@media screen and (max-width: 680px) {
+
+
+@media screen and (max-width: 580px) {
   .mobile {
     display: none;
   }
@@ -117,6 +121,7 @@ textarea {
 
   .aboutContent{
     padding-top: 10%;
+    padding-bottom: 10%;
   }
   .mobileSpace {
     padding-top: 20%;

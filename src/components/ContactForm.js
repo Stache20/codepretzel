@@ -59,7 +59,7 @@ const ContactForm = () => {
             value={toSend.first_name}
             onChange={handleChange}
             placeholder="First Name"
-            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-black rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-black rounded text-sm border-1 shadow outline-none focus:outline-none focus:ring w-full"
             required
           />
         </div>
@@ -70,7 +70,7 @@ const ContactForm = () => {
             onChange={handleChange}
             placeholder="Last Name"
             name="last_name"
-            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-black rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-black rounded text-sm border-1 shadow outline-none focus:outline-none focus:ring w-full"
             required
           />
         </div>
@@ -81,7 +81,7 @@ const ContactForm = () => {
             onChange={handleChange}
             placeholder="Email"
             name="email"
-            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-black rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-black rounded text-sm border-1 shadow outline-none focus:outline-none focus:ring w-full"
             required
           />
         </div>
@@ -89,12 +89,13 @@ const ContactForm = () => {
         <div className="mb-3 pt-0">
           <input
             type="tel"
+            maxLength={13}
             pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
             value={toSend.phone_number}
             onChange={handleChange}
             placeholder="Phone Number"
             name="phone_number"
-            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-black rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+            className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-black rounded text-sm border-1 shadow outline-none focus:outline-none focus:ring w-full"
             required
           />
           <p style={{ color: "grey" }}>Format 123-456-7890</p>
@@ -102,7 +103,7 @@ const ContactForm = () => {
 
         <div className="mb-3 pt-0">
           <select
-            className="px-3 py-3 relative bg-black  rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+            className="px-3 py-3 relative bg-black  rounded text-sm border-1 shadow outline-none focus:outline-none focus:ring w-full"
             placeHolder="Select Service"
             id="service"
             name="service"
@@ -121,7 +122,7 @@ const ContactForm = () => {
             name="message"
             value={toSend.message}
             onChange={handleChange}
-            className="request px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-black rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
+            className="request px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-black rounded text-sm border-1 shadow outline-none focus:outline-none focus:ring w-full"
             required
           />
         </div>

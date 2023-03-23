@@ -90,7 +90,7 @@ const ContactForm = () => {
           <input
             type="tel"
             maxLength={13}
-            pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
+            pattern="[0-9]{13}"
             value={toSend.phone_number}
             onChange={handleChange}
             placeholder="Phone Number"
@@ -98,7 +98,6 @@ const ContactForm = () => {
             className="px-3 py-3 placeholder-gray-400 text-gray-600 relative bg-black rounded text-sm border-1 shadow outline-none focus:outline-none focus:ring w-full"
             required
           />
-          <p style={{ color: "grey" }}>Format 123-456-7890</p>
         </div>
 
         <div className="mb-3 pt-0">

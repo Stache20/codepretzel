@@ -90,7 +90,7 @@ const ContactForm = () => {
           <input
             type="tel"
             maxLength={13}
-            pattern="[0-9]{13}"
+            pattern="{13}"
             value={toSend.phone_number}
             onChange={handleChange}
             placeholder="Phone Number"

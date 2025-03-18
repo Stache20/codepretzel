@@ -70,7 +70,6 @@ function AboutStefan() {
       <div className="justify-content-center aboutContent">
         <motion.div variants={titleSecond} initial="hidden" animate="show" className=" col-sm text-center"><img className='' height='350px' src={require("../images/stefan.png")} alt='ownerPhoto'></img></motion.div>
         <br></br><div className='text-center'>
-        <motion.div variants={titleThird} initial="hidden" animate="show"><h3>A man and his computer!</h3> </motion.div> 
           <svg
           onClick={smoothScroll}
           stroke="currentColor"
@@ -100,27 +99,31 @@ function AboutStefan() {
         animate={control}
          className="mobileSpace  ">
 
-          <p>
-            My name is Stefan and I code!<br></br>
-           I code because I enjoy the challenge of problem solving and creating something from nothing.
-           
-          
-          </p>
-          <br></br>
-          <p>It's very satisfying to take an idea and turn it into a functioning program. 
-          I also love how coding has enabled me to collaborate with people from all over the world, 
-            sharing ideas and working together to create something amazing.</p>
-        <br></br>
-      
-          <p>I have a strong background in both front-end and back-end development, and I am comfortable working with a variety of development tools and frameworks, such as HTML, CSS, JavaScript, React, Node.js, and MongoDB.</p>
-          <br></br>
-          <p> I am also knowledgeable in the areas of UI/UX design, software architecture, and cloud computing. My goal is to develop websites and web applications that are both aesthetically pleasing and functionally robust. I am constantly striving to stay ahead of the curve and am always looking for ways to improve my development process.</p>
-          <img classname='stefanImg' height='300px' src={require("../images/desk.png")} alt='DeskPhoto'></img>
-
-        </motion.div>
+<p>
+  My name is Stefan, and I specialize in IT solutions!<br></br>
+  I enjoy tackling complex problems, optimizing workflows, and leveraging technology to create impactful solutions.
+</p>
+<br></br>
+<p>
+  With a background in **Azure administration, data reporting, and automation**, I’ve worked on cloud infrastructure, SQL-based reporting, and process optimization. 
+  I thrive on finding efficiencies and helping businesses make data-driven decisions.
+</p>
+<br></br>
+<p>
+  I have experience in **front-end and back-end development**, working with technologies like **React, Node.js, and SQL**.  
+  I’m also deeply interested in **AI, automation, and cloud computing**, constantly exploring how emerging technologies can improve business operations.
+</p>
+<br></br>
+<p>
+  My goal is to develop scalable, high-performance solutions that bridge the gap between **data, automation, and user experience**.  
+  Whether it's **cloud migrations, SQL reporting, or AI-driven analytics**, I'm always looking for innovative ways to push boundaries and improve efficiency.
+</p>
+<img className='stefanImg' height='300px' src={require("../images/desk.png")} alt='DeskPhoto'></img>
+</motion.div>
      </div>
       </div>
   );
+
 }
 
 export default AboutStefan;

@@ -64,17 +64,17 @@ function ServiceContent() {
         <br></br>
         <motion.div variants={titleSecond} initial="hidden" animate="show">
         <p>
-          Offering Full Stack Web Development to get the maximum out of your web
-          presents.
+        ✅ Automation & Workflow Optimization – Streamlining processes to reduce manual work and improve efficiency. <br></br>
+✅ AI & Data Solutions – Leveraging AI tools and data analytics for smarter decision-making. <br></br>
+✅ SQL & Database Management – Custom queries, reporting, and database optimization.
         </p>
         </motion.div>
         <br></br>
         <motion.div variants={titleThird} initial="hidden" animate="show">
         <p>
-          At WebPretzel, we offer a full suite of web development and software
-          engineering services. Our full stack developers have the experience
-          and expertise to create custom websites and applications that meet
-          your exact requirements.
+        ✅ Web Development & Customization – Building and enhancing websites and web applications.<br></br>
+✅ Software & Code Optimization – Improving existing software for better performance and functionality.<br></br>
+✅ Cloud & Infrastructure Consulting – Optimizing cloud environments, migrations, and security.
         </p>
         <svg
           onClick={smoothScroll}

@@ -32,7 +32,10 @@ function Home() {
         <br></br>
         <br></br>
         <motion.div variants={title} initial="hidden" animate="show">
-          <h1 className="cover-heading">Full-Stack Web Development</h1>
+          <h1 className="cover-heading">IT Consulting</h1>
+          <h2>Helping businesses optimize their technology for efficiency and growth.
+
+</h2>
         </motion.div>
         <br></br>
         <div className="container">

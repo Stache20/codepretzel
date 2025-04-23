@@ -27,49 +27,30 @@ function Contact() {
     },
   };
 
-  const titleThird = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {delay: 2,
-      },
-    },
-  };
-  
-  const titleFourth = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {delay: 2.5,
-      },
-    },
-  };
-
+ 
 
 
   return (
     <div>
       <Header />
-
-      <div className="box">
+    <div className="coverPage">
       <motion.div
-      variants={title} initial="hidden" animate="show">
-      <h3>Transform Your Vision into Reality</h3>
-      </motion.div>
-      <br></br>
-      <motion.div></motion.div>
-      </div>
-
-
-
-      <motion.div
-      variants={titleFourth} initial="hidden" animate="show"
-       className="rowC">
+      variants={title} initial="hidden" animate="show"
+       className="inner cover text-center">
+        <h3>Transform Your Vision into Reality</h3>
         <div className="mobile">
           <WebPretzelLogo width="300px" height="300px" />
         </div>
-        <ContactForm />
       </motion.div>
+      
+      <motion.div
+      variants={titleSecond} initial="hidden" animate="show"
+       className="box">
+      <div>
+        <ContactForm />
+        </div>
+        </motion.div>
+        </div>
       <Footer />
     </div>
   );

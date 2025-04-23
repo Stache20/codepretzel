@@ -100,23 +100,23 @@ function AboutStefan() {
          className="mobileSpace  ">
 
 <p>
-  My name is Stefan, and I specialize in IT solutions!<br></br>
+  Hi, I'm Stefan!<br></br>
   I enjoy tackling complex problems, optimizing workflows, and leveraging technology to create impactful solutions.
 </p>
 <br></br>
 <p>
-  With a background in **Azure administration, data reporting, and automation**, I’ve worked on cloud infrastructure, SQL-based reporting, and process optimization. 
+  With a background in Azure administration, data reporting, and automation, I’ve worked on cloud infrastructure, SQL-based reporting, and process optimization. 
   I thrive on finding efficiencies and helping businesses make data-driven decisions.
 </p>
 <br></br>
 <p>
-  I have experience in **front-end and back-end development**, working with technologies like **React, Node.js, and SQL**.  
-  I’m also deeply interested in **AI, automation, and cloud computing**, constantly exploring how emerging technologies can improve business operations.
+  I have experience in front-end and back-end development, working with technologies like React, Node.js, and SQL.  
+  I’m also deeply interested in **AI, automation, and cloud computing**, constantly exploring how emerging technologies can improve YOUR business operations.
 </p>
 <br></br>
 <p>
-  My goal is to develop scalable, high-performance solutions that bridge the gap between **data, automation, and user experience**.  
-  Whether it's **cloud migrations, SQL reporting, or AI-driven analytics**, I'm always looking for innovative ways to push boundaries and improve efficiency.
+  My goal is to develop scalable, high-performance solutions that bridge the gap between data, automation, and user experience.  
+  Whether it's cloud migrations, SQL reporting, or AI-driven analytics, I'm always looking for innovative ways to push boundaries and improve efficiency.
 </p>
 <img className='stefanImg' height='300px' src={require("../images/desk.png")} alt='DeskPhoto'></img>
 </motion.div>

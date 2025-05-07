@@ -10,10 +10,10 @@ const ContactForm = () => {
         <div className="flex items-center justify-center space-x-3 mb-3">
           <Mail size={24} className="text-blue-500" />
           <a
-            href="mailto:sstahuber@gmail.com"
+            href="mailto:stahuberstefan@hotmail.com"
             className="text-lg text-white hover:underline"
           >
-            sstahuber@gmail.com
+            stahuberstefan@hotmail.com
           </a>
         </div>
 

@@ -7,7 +7,7 @@ function Linkedin() {
       href="https://www.linkedin.com/in/stefan-stahuber/?locale=en_US"
     >
       <i className="fa-brands fa-linkedin"></i>{" "}
-      <span class="sr-only">(current)</span>
+      <span className="sr-only">(current)</span>
     </a>
   );
 }

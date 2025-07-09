@@ -10,6 +10,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Services from "./components/Services";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Blog from "./components/Blog";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -20,6 +21,7 @@ root.render(
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

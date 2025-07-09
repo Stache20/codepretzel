@@ -1,12 +1,12 @@
 import React from "react";
-import Header from "./Navbar";
+import MainNavbar from "./Navbar";
 import Home from "./Home";
 import Footer from "./Footer";
 
 function App() {
   return (
     <div>
-      <Header />
+      <MainNavbar />
       <Home />
       <Footer />
     </div>

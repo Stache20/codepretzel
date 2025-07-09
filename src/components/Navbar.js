@@ -4,12 +4,12 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import WebPretzelLogo from "./WebPretzelLogo";
 
-function Header() {
+function MainNavbar() {
   return (
     <Navbar fixed="top" variant="dark" bg="" expand="lg">
       <Container fluid>
         <Navbar.Brand href="/">
-          <WebPretzelLogo height="30px" weight="30px" />
+          <WebPretzelLogo height="30px" width="30px" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-white-example" />
         <Navbar.Collapse id="navbar-dark-example">
@@ -18,6 +18,7 @@ function Header() {
               <NavDropdown.Item href="/">Home</NavDropdown.Item>
               <NavDropdown.Item href="/services">Services</NavDropdown.Item>
               <NavDropdown.Item href="/about">About</NavDropdown.Item>
+              <NavDropdown.Item href="/blog">Blog</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="/contact">Contact</NavDropdown.Item>
             </NavDropdown>
@@ -28,4 +29,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default MainNavbar;

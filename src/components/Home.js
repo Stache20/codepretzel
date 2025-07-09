@@ -27,17 +27,16 @@ function Home() {
     <div className="coverPage">
       <main role="main" className="inner cover text-center">
         <div className="">
-          <WebPretzelLogo height="300px" weight="300px" />
+          <WebPretzelLogo height="300px" width="300px" />
         </div>
-        <br></br>
-        <br></br>
+        <div style={{ margin: '2rem 0' }} />
         <motion.div variants={title} initial="hidden" animate="show">
           <h1 className="cover-heading">IT Consulting</h1>
           <h2>Helping businesses optimize their technology for efficiency and growth.
 
 </h2>
         </motion.div>
-        <br></br>
+        <div style={{ margin: '1rem 0' }} />
         <div className="container">
           <motion.div
             variants={options}
@@ -47,21 +46,28 @@ function Home() {
           >
             <div className="col col-lg-2 align-self-center">
               <p className="lead">
-                <a href="/about" class="btn btn-lg btn-dark">
+                <a href="/about" className="btn btn-lg btn-dark">
                   About
                 </a>
               </p>
             </div>
-            <div className="col-md-auto align-self-center">
+            <div className="col col-lg-2 align-self-center">
               <p className="lead">
-                <a href="/services" class="btn btn-lg btn-dark">
+                <a href="/services" className="btn btn-lg btn-dark">
                   Services
                 </a>
               </p>
             </div>
             <div className="col col-lg-2 align-self-center">
               <p className="lead">
-                <a href="/contact" class="btn btn-lg btn-dark">
+                <a href="/blog" className="btn btn-lg btn-dark">
+                  Blog
+                </a>
+              </p>
+            </div>
+            <div className="col col-lg-2 align-self-center">
+              <p className="lead">
+                <a href="/contact" className="btn btn-lg btn-dark">
                   Contact
                 </a>
               </p>

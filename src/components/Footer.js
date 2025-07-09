@@ -8,7 +8,7 @@ function Footer() {
       <div className="inner">
         <p>
           {" "}
-          <WebPretzelLogo height="30px" weight="30px" /> WebPretzel by Stefan
+          <WebPretzelLogo height="30px" width="30px" /> WebPretzel by Stefan
           Stahuber <Linkedin />
         </p>
       </div>

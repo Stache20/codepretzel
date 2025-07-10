@@ -1,129 +1,142 @@
 import React from "react";
-import { motion, useAnimation } from "framer-motion";
+import { FaLinkedin } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
+import { FiPhone } from "react-icons/fi";
+import { motion } from "framer-motion";
+import "../style.css";
 
-import { useInView } from "react-intersection-observer";
+const experience = [
+  {
+    title: "Application Engineer",
+    company: "System Logistics (Krones Group)",
+    date: "Jan 2025 - Present",
+    location: "Montreal, Quebec, Canada",
+  },
+  {
+    title: "Cloud Administrator",
+    company: "Jonas Software",
+    date: "Jul 2021 - Mar 2025",
+    location: "Vancouver, BC, Canada",
+  },
+  {
+    title: "Technical Solutions Specialist - Key Account support",
+    company: "Jonas Software",
+    date: "Mar 2020 - Jul 2021",
+    location: "Vancouver, BC, Canada",
+  },
+  {
+    title: "Sales Representative",
+    company: "Pacific Bottleworks Company",
+    date: "Jan 2019 - Mar 2020",
+    location: "Fort Langley, BC, Canada",
+  },
+  {
+    title: "Account Manager",
+    company: "Filcon Electronic GmbH",
+    date: "Jan 2016 - Jan 2019",
+    location: "Taufkirchen, Germany",
+  },
+  {
+    title: "Store Supervisor",
+    company: "OMV",
+    date: "Oct 2015 - Dec 2015",
+    location: "Bruckmuehl, Germany",
+  },
+  {
+    title: "Guest Service",
+    company: "CRMR",
+    date: "May 2015 - Sep 2015",
+    location: "Emerald Lake Resort, Canada",
+  },
+  {
+    title: "Sales Assistant",
+    company: "Jack&JONES",
+    date: "Dec 2014 - Apr 2015",
+    location: "Calgary, Canada",
+  },
+  {
+    title: "Administrative Assistant (Apprenticeship)",
+    company: "JNS Dachtechnik GmbH",
+    date: "Sep 2011 - Sep 2014",
+    location: "Feldkirchen-Westerham, Germany",
+  },
+];
 
-import { useEffect } from "react";
- 
+const education = [
+  {
+    school: "Akademie Handel München",
+    degree: "Bachelor Professional Trade and Commerce (CCI)",
+    years: "2018 - 2019",
+  },
+  {
+    school: "Berufsschule 2 Rosenheim",
+    degree: "Diploma Administrative Management (College Diploma)",
+    years: "2011 - 2014",
+  },
+];
 
 function AboutStefan() {
-
-    function smoothScroll(e) {
-      let scroll = document.getElementById("introduction");
-      e.preventDefault(); // Stop Page Reloading
-      scroll && scroll.scrollIntoView({ behavior: "smooth" });
-    }
-
-    const fadeIn = {
-      visible: { opacity: 1,  transition: { delay: 0.5 } },
-      hidden: { opacity: 0,  },
-    };
-    const control = useAnimation();
-    const [ref, inView] = useInView();
-
-    useEffect(() => {
-      if (inView) {
-        control.start("visible");
-      } else {
-        control.start("hidden");
-      }
-    }, [control, inView]);
-  
-    const title = {
-      hidden: { opacity: 0 },
-      show: {
-        opacity: 1,
-        transition: {delay: 0.5,
-        },
-      },
-    };
-  
-    const titleSecond = {
-      hidden: { opacity: 0 },
-      show: {
-        opacity: 1,
-        transition: {delay: 1,
-        },
-      },
-    };
-  
-    const titleThird = {
-      hidden: { opacity: 0 },
-      show: {
-        opacity: 1,
-        transition: {delay: 2,
-        },
-      },
-    };
-
-   
-
- 
-
-
   return (
-    <div>
-      <motion.div variants={title} initial="hidden" animate="show" className="mobileSpace about title text-center">
-        <h1>What's a WebPretzel?</h1>
-      </motion.div>
-
-      <div className="justify-content-center aboutContent">
-        <motion.div variants={titleSecond} initial="hidden" animate="show" className=" col-sm text-center"><img className='' height='350px' src={require("../images/stefan.png")} alt='ownerPhoto'></img></motion.div>
-        <br></br><div className='text-center'>
-          <svg
-          onClick={smoothScroll}
-          stroke="currentColor"
-          fill="currentColor"
-          stroke-width="0"
-          viewBox="0 0 16 16"
-          className="divider__arrow"
-          height="1em"
-          width="1em"
-        >
-          <path
-            fill-rule="evenodd"
-            d="M1.553 6.776a.5.5 0 0 1 .67-.223L8 9.44l5.776-2.888a.5.5 0 1 1 .448.894l-6 3a.5.5 0 0 1-.448 0l-6-3a.5.5 0 0 1-.223-.67z"
-          ></path>
-                  </svg>
-
+    <motion.div
+      className="aboutpro-section"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, type: "spring" }}
+    >
+      <div className="aboutpro-container">
+        <div className="aboutpro-photo">
+          <img src={require("../images/stefan.png")} alt="Stefan Stahuber" height="260" style={{ borderRadius: '1.2rem', width: '100%', maxWidth: 260, objectFit: 'cover' }} />
+        </div>
+        <div className="aboutpro-main">
+          <h1 className="aboutpro-name">Stefan Stahuber</h1>
+          <h2 className="aboutpro-title">IT Specialist</h2>
+          <p className="aboutpro-intro">
+            Hi, I'm Stefan! I enjoy tackling complex problems, optimizing workflows, and leveraging technology to create impactful solutions.<br />
+            With a background in Azure administration, data reporting, and automation, I thrive on finding efficiencies and helping businesses make data-driven decisions.<br />
+            My goal is to develop scalable, high-performance solutions that bridge the gap between data, automation, and user experience.
+          </p>
+          <div className="aboutpro-contact">
+            <a href="mailto:stahuberstefan@hotmail.com" className="aboutpro-contact-link"><HiOutlineMail /> stahuberstefan@hotmail.com</a>
+            <a href="tel:+12363356526" className="aboutpro-contact-link"><FiPhone /> +1 236-335-6526</a>
+            <a href="https://www.linkedin.com/in/stefanstahuber" target="_blank" rel="noopener noreferrer" className="aboutpro-contact-link"><FaLinkedin /> LinkedIn</a>
           </div>
-     </div>
-  
-
-     <div id='introduction'  className=" text-center aboutContent">
-
-     <motion.div
-     ref={ref}
-        variants={fadeIn}
-        initial="hidden"
-        animate={control}
-         className="mobileSpace  ">
-
-<p>
-  Hi, I'm Stefan!<br></br>
-  I enjoy tackling complex problems, optimizing workflows, and leveraging technology to create impactful solutions.
-</p>
-<br></br>
-<p>
-  With a background in Azure administration, data reporting, and automation, I’ve worked on cloud infrastructure, SQL-based reporting, and process optimization. 
-  I thrive on finding efficiencies and helping businesses make data-driven decisions.
-</p>
-<br></br>
-<p>
-  I have experience in front-end and back-end development, working with technologies like React, Node.js, and SQL.  
-  I’m also deeply interested in **AI, automation, and cloud computing**, constantly exploring how emerging technologies can improve YOUR business operations.
-</p>
-<br></br>
-<p>
-  My goal is to develop scalable, high-performance solutions that bridge the gap between data, automation, and user experience.  
-  Whether it's cloud migrations, SQL reporting, or AI-driven analytics, I'm always looking for innovative ways to push boundaries and improve efficiency.
-</p>
-<img className='stefanImg' height='300px' src={require("../images/desk.png")} alt='DeskPhoto'></img>
-</motion.div>
-     </div>
+          <div className="aboutpro-languages">
+            <span>English (Native/Bilingual)</span>
+            <span>German (Native/Bilingual)</span>
+            <span>French (Intermediate)</span>
+          </div>
+          <div className="aboutpro-buttons">
+            <a href="/resume.pdf" className="btn btn-lg btn-dark aboutpro-btn" download>Download Resume</a>
+            <a href="/contact" className="btn btn-lg btn-dark aboutpro-btn">Let's Connect</a>
+          </div>
+        </div>
       </div>
+      <div className="aboutpro-details">
+        <div className="aboutpro-experience">
+          <h3>Experience</h3>
+          <ul className="aboutpro-list">
+            {experience.map((exp, idx) => (
+              <li key={idx} className="aboutpro-list-item">
+                <span className="aboutpro-list-title">{exp.title}</span> <span className="aboutpro-list-company">@ {exp.company}</span><br />
+                <span className="aboutpro-list-date">{exp.date}</span> <span className="aboutpro-list-location">| {exp.location}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="aboutpro-education">
+          <h3>Education</h3>
+          <ul className="aboutpro-list">
+            {education.map((edu, idx) => (
+              <li key={idx} className="aboutpro-list-item">
+                <span className="aboutpro-list-title">{edu.degree}</span><br />
+                <span className="aboutpro-list-company">{edu.school}</span> <span className="aboutpro-list-date">({edu.years})</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </motion.div>
   );
-
 }
 
 export default AboutStefan;

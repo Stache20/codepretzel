@@ -37,7 +37,7 @@ function Home() {
 </h2>
         </motion.div>
         <div style={{ margin: '1rem 0' }} />
-        <div className="container">
+        <div className="container" style={{ marginTop: '3rem' }}>
           <motion.div
             variants={options}
             initial="hidden"

@@ -13,7 +13,7 @@ const ContactForm = () => {
             href="mailto:stahuberstefan@hotmail.com"
             className="text-lg text-white hover:underline"
           >
-            stahuberstefan@hotmail.com
+              &nbsp;stahuberstefan@hotmail.com
           </a>
         </div>
 
@@ -23,7 +23,7 @@ const ContactForm = () => {
             href="tel:+2363356526"
             className="text-lg text-white hover:underline"
           >
-            +1 236 335 6526
+            &nbsp;+1 236 335 6526
           </a>
         </div>
       </div>

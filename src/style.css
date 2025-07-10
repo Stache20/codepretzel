@@ -1,3 +1,11 @@
+html, body, #root {
+  background: #000 !important;
+  color: #fff;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
 * {
   background-color: #000000;
   color: white;
@@ -95,6 +103,151 @@ textarea {
 
 }
 
+/* Service Cards Styles */
+.service-cards-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+  margin: 3rem 0;
+  border-top: none !important;
+  background: #000 !important;
+}
+
+.service-card {
+  width: 70%;
+  background: #000 !important; /* force pure black inside card */
+  border: 1.5px solid #444;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.22);
+  padding: 2rem 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.2s;
+}
+
+.service-card:hover, .service-card.clickable:hover {
+  background: #000 !important;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.32);
+}
+
+.service-card:hover .service-card-icon {
+  transform: scale(1.15);
+}
+
+.service-card-icon {
+  margin-right: 1.5rem;
+  color: #f5c518;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+
+/* Remove hover background for text/icon/content */
+.service-card:hover .service-card-content,
+.service-card:hover .service-card-text,
+.service-card:hover .service-card-icon {
+  background: transparent !important;
+}
+
+.service-card-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.service-card-text {
+  text-align: center;
+  flex: 1;
+}
+
+.service-card-text h2 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.4rem;
+  color: #fff;
+  font-weight: 600;
+}
+
+.service-card-text p {
+  margin: 0;
+  color: #ccc;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 900px) {
+  .service-card {
+    width: 90%;
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .service-card {
+    width: 100%;
+    flex-direction: column;
+    padding: 1.2rem 0.5rem;
+  }
+  .service-card-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .service-card-icon {
+    margin: 0 0 1rem 0;
+  }
+  .service-card-text {
+    text-align: center;
+  }
+}
+
+.contact-cta {
+  margin-top: 3rem;
+  border: 2px solid #666;
+  background: #000 !important;
+}
+
+.main-navbar {
+  background: #000 !important;
+  border-bottom: 1.5px solid #222 !important;
+  padding: 0.2rem 0;
+}
+
+.nav-links .nav-link-custom {
+  color: #fff !important;
+  font-weight: 500;
+  font-size: 1.08rem;
+  margin-left: 1.2rem;
+  margin-right: 0.2rem;
+  transition: color 0.18s;
+  letter-spacing: 0.02em;
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.5rem;
+}
+
+.nav-links .nav-link-custom:hover,
+.nav-links .nav-link-custom:focus,
+.nav-links .nav-link-custom.active {
+  color: #FFD700 !important;
+  background: rgba(255, 215, 0, 0.08);
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 991px) {
+  .nav-links .nav-link-custom {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 1rem 0.7rem;
+    font-size: 1.1rem;
+    border-radius: 0.3rem;
+  }
+}
 
 
 @media screen and (max-width: 580px) {
@@ -127,5 +280,186 @@ textarea {
     padding-top: 20%;
     padding-bottom: 15%;
     text-align: center;
+  }
+}
+
+.aboutpro-section {
+  background: #000;
+  color: #fff;
+  padding: 3rem 0 2rem 0;
+  min-height: 100vh;
+}
+
+.aboutpro-container {
+  display: flex;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.aboutpro-photo {
+  flex: 0 0 260px;
+  max-width: 260px;
+  margin-bottom: 2rem;
+}
+
+.aboutpro-main {
+  flex: 1 1 350px;
+  min-width: 280px;
+}
+
+.aboutpro-name {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+  color: #FFD700;
+}
+
+.aboutpro-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 1.1rem;
+  letter-spacing: 0.04em;
+}
+
+.aboutpro-intro {
+  font-size: 1.08rem;
+  margin-bottom: 1.2rem;
+  color: #ccc;
+}
+
+.aboutpro-contact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-bottom: 1.1rem;
+}
+
+.aboutpro-contact-link {
+  color: #FFD700;
+  text-decoration: none;
+  font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.18s;
+}
+.aboutpro-contact-link:hover {
+  color: #fff;
+}
+
+.aboutpro-languages {
+  background: #000;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  margin-bottom: 1.3rem;
+  color: #fff;
+}
+.aboutpro-lang {
+  background: #181818;
+  border-radius: 0.7rem;
+  padding: 0.4rem 1rem;
+  font-size: 1.01rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.aboutpro-lang-level {
+  color: #fff;
+  font-size: 0.98rem;
+  margin-left: 0.3rem;
+}
+
+.aboutpro-buttons {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+.aboutpro-btn {
+  background: #181818 !important;
+  color: #fff !important;
+  border: 1.5px solid #fff !important;
+  font-weight: 600;
+  border-radius: 0.7rem;
+  padding: 0.7rem 1.5rem;
+  transition: background 0.18s, color 0.18s;
+}
+.aboutpro-btn:hover {
+  background: #fff !important;
+  color: #181818 !important;
+}
+
+.aboutpro-details {
+  max-width: 1100px;
+  margin: 2.5rem auto 0 auto;
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+.aboutpro-experience, .aboutpro-education {
+  flex: 1 1 350px;
+  min-width: 280px;
+}
+.aboutpro-experience h3, .aboutpro-education h3 {
+  color: #fff;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+.aboutpro-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.aboutpro-list-item {
+  margin-bottom: 1.1rem;
+  font-size: 1.05rem;
+  color: #fff;
+}
+.aboutpro-list-title {
+  font-weight: 600;
+  color: #fff;
+}
+.aboutpro-list-company {
+  color: #fff;
+  font-weight: 400;
+}
+.aboutpro-list-date, .aboutpro-list-location {
+  color: #ccc;
+  font-size: 0.98rem;
+}
+
+@media (max-width: 900px) {
+  .aboutpro-container, .aboutpro-details {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  .aboutpro-photo {
+    margin-bottom: 0.5rem;
+    max-width: 180px;
+  }
+}
+
+@media (max-width: 600px) {
+  .aboutpro-section {
+    padding: 1.2rem 0 1rem 0;
+  }
+  .aboutpro-photo {
+    max-width: 120px;
+    margin: 0 auto 1rem auto;
+  }
+  .aboutpro-main {
+    min-width: 0;
+  }
+  .aboutpro-details {
+    gap: 1.2rem;
   }
 }

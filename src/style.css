@@ -303,6 +303,9 @@ textarea {
   flex: 0 0 260px;
   max-width: 260px;
   margin-bottom: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .aboutpro-main {
@@ -445,6 +448,9 @@ textarea {
   .aboutpro-photo {
     margin-bottom: 0.5rem;
     max-width: 180px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -454,7 +460,17 @@ textarea {
   }
   .aboutpro-photo {
     max-width: 120px;
+    width: 100%;
     margin: 0 auto 1rem auto;
+    display: flex;
+    justify-content: center;
+  }
+  .aboutpro-photo img {
+    width: 120px !important;
+    max-width: 120px !important;
+    height: auto;
+    object-fit: cover;
+    display: block;
   }
   .aboutpro-main {
     min-width: 0;

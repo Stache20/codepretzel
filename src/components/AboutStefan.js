@@ -35,7 +35,7 @@ const experience = [
     company: "Filcon Electronic GmbH",
     date: "Jan 2016 - Jan 2019",
     location: "Taufkirchen, Germany",
-  },
+  }
 ];
 
 const education = [
@@ -82,7 +82,7 @@ function AboutStefan() {
             <span>French (Intermediate)</span>
           </div>
           <div className="aboutpro-buttons">
-            <a href="/resume.pdf" className="btn btn-lg btn-dark aboutpro-btn" download>Download Resume</a>
+            <a href="/Resume%20Stefan%20Stahuber.pdf" className="btn btn-lg btn-dark aboutpro-btn" download>Download Resume</a>
             <a href="/contact" className="btn btn-lg btn-dark aboutpro-btn">Let's Connect</a>
           </div>
         </div>

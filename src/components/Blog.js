@@ -363,12 +363,7 @@ function Blog() {
                     alignItems: "center",
                     gap: "1rem"
                   }}>
-                    <span>📅 {new Date(post.pubDate).toLocaleDateString('en-US', { 
-                      year: 'numeric', 
-                      month: 'long', 
-                      day: 'numeric' 
-                    })}</span>
-                    <span>•</span>
+                    {/* Removed date */}
                     <span>👤 {post.author}</span>
                   </div>
                   

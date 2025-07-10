@@ -36,30 +36,6 @@ const experience = [
     date: "Jan 2016 - Jan 2019",
     location: "Taufkirchen, Germany",
   },
-  {
-    title: "Store Supervisor",
-    company: "OMV",
-    date: "Oct 2015 - Dec 2015",
-    location: "Bruckmuehl, Germany",
-  },
-  {
-    title: "Guest Service",
-    company: "CRMR",
-    date: "May 2015 - Sep 2015",
-    location: "Emerald Lake Resort, Canada",
-  },
-  {
-    title: "Sales Assistant",
-    company: "Jack&JONES",
-    date: "Dec 2014 - Apr 2015",
-    location: "Calgary, Canada",
-  },
-  {
-    title: "Administrative Assistant (Apprenticeship)",
-    company: "JNS Dachtechnik GmbH",
-    date: "Sep 2011 - Sep 2014",
-    location: "Feldkirchen-Westerham, Germany",
-  },
 ];
 
 const education = [

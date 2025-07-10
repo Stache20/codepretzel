@@ -1,5 +1,5 @@
 // netlify/functions/hashnode-blog.js
-
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 exports.handler = async function(event, context) {
     const HASHNODE_ACCESS_TOKEN = process.env.HASHNODE_ACCESS_TOKEN;
   

@@ -1,4 +1,5 @@
 // netlify/functions/rss-proxy.js
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 
 exports.handler = async function(event, context) {
   const rssUrl = 'https://webpretzl.hashnode.dev/rss.xml';

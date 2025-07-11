@@ -74,7 +74,7 @@ function AboutStefan() {
           <div className="aboutpro-contact">
             <a href="mailto:stahuberstefan@hotmail.com" className="aboutpro-contact-link"><HiOutlineMail /> stahuberstefan@hotmail.com</a>
             <a href="tel:+12363356526" className="aboutpro-contact-link"><FiPhone /> +1 236-335-6526</a>
-            <a href="https://www.linkedin.com/in/stefanstahuber" target="_blank" rel="noopener noreferrer" className="aboutpro-contact-link"><FaLinkedin /> LinkedIn</a>
+            <a href="https://www.linkedin.com/in/stefan-stahuber/?locale=en_US" target="_blank" rel="noopener noreferrer" className="aboutpro-contact-link"><FaLinkedin /> LinkedIn</a>
             <a href="https://github.com/Stache20" target="_blank" rel="noopener noreferrer" className="aboutpro-contact-link"><FaGithub /> GitHub</a>
           </div>
           <div className="aboutpro-languages">

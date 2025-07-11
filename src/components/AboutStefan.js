@@ -1,5 +1,5 @@
 import React from "react";
-import { FaLinkedin } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { FiPhone } from "react-icons/fi";
 import { motion } from "framer-motion";
@@ -75,10 +75,11 @@ function AboutStefan() {
             <a href="mailto:stahuberstefan@hotmail.com" className="aboutpro-contact-link"><HiOutlineMail /> stahuberstefan@hotmail.com</a>
             <a href="tel:+12363356526" className="aboutpro-contact-link"><FiPhone /> +1 236-335-6526</a>
             <a href="https://www.linkedin.com/in/stefanstahuber" target="_blank" rel="noopener noreferrer" className="aboutpro-contact-link"><FaLinkedin /> LinkedIn</a>
+            <a href="https://github.com/Stache20" target="_blank" rel="noopener noreferrer" className="aboutpro-contact-link"><FaGithub /> GitHub</a>
           </div>
           <div className="aboutpro-languages">
-            <span>English (Native/Bilingual)</span>
-            <span>German (Native/Bilingual)</span>
+            <span>English (Native)</span>
+            <span>German (Native)</span>
             <span>French (Intermediate)</span>
           </div>
           <div className="aboutpro-buttons">

@@ -209,6 +209,15 @@ textarea {
   background: #000 !important;
 }
 
+.contact-cta h1 {
+  width: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  margin-right: 0;
+  padding-right: 0.5rem; /* Add a little space if needed */
+  box-sizing: border-box;
+}
+
 .main-navbar {
   background: #000 !important;
   border-bottom: 1.5px solid #222 !important;

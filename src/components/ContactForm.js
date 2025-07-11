@@ -1,5 +1,6 @@
 import React from "react";
 import { Mail, Phone } from "lucide-react";
+import { FaLinkedin } from "react-icons/fa";
 
 const ContactForm = () => {
   return (
@@ -17,13 +18,25 @@ const ContactForm = () => {
           </a>
         </div>
 
-        <div className="flex items-center justify-center space-x-5">
+        <div className="flex items-center justify-center space-x-5 mb-3">
           <Phone size={24} className="text-white" />
           <a
             href="tel:+2363356526"
             className="text-lg text-white hover:underline"
           >
             &nbsp;+1 236 335 6526
+          </a>
+        </div>
+
+        <div className="flex items-center justify-center space-x-5">
+          <FaLinkedin size={24} className="text-white" />
+          <a
+            href="https://www.linkedin.com/in/stefanstahuber"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-lg text-white hover:underline"
+          >
+            &nbsp;LinkedIn
           </a>
         </div>
       </div>

@@ -1,0 +1,94 @@
+---
+import ServicePage from "../../../layouts/ServicePage.astro";
+---
+
+<ServicePage
+  lang="fr"
+  route="reporting"
+  title="Consultant Power BI et rapports SQL à Montréal | WebPretzel"
+  description="Rapports SQL sur mesure et tableaux de bord Power BI sur SQL Server, par un consultant de Montréal. Des chiffres fiables que votre équipe utilise vraiment."
+  crumb="Rapports et tableaux de bord"
+  eyebrow="Rapports et tableaux de bord"
+  h1="Rapports SQL sur mesure et tableaux de bord Power BI fiables"
+  lead="Je suis consultant Power BI et SQL Server à Montréal. Je conçois des rapports sur mesure et des tableaux de bord à partir des données que vous avez déjà, pour que les chiffres soient prêts quand vous en avez besoin et que tout le monde voie les mêmes."
+  who={{
+    heading: "À qui s'adresse ce service",
+    intro: "Aux propriétaires, contrôleurs et directeurs des opérations de PME qui veulent de meilleurs chiffres sans embaucher une équipe de données.",
+    items: [
+      "Vous utilisez un ERP ou un logiciel comptable qui repose sur une base de données SQL Server",
+      "Une seule personne sait extraire les chiffres, et tout le monde l'attend",
+      "Vous payez pour Power BI, mais peu de tableaux de bord sont réellement consultés",
+      "Votre banque, votre conseil d'administration ou votre comptable attend des rapports chaque mois",
+    ],
+  }}
+  problems={{
+    heading: "Les problèmes de rapports que je règle le plus souvent",
+    items: [
+      {
+        title: "Des totaux qui ne concordent pas",
+        text: "Les ventes ont un chiffre, la comptabilité en a un autre. C'est souvent deux requêtes avec des règles différentes. Je définis chaque chiffre une seule fois, pour que tous les rapports concordent.",
+      },
+      {
+        title: "Des heures de préparation manuelle",
+        text: "Exportations, copier-coller et formules à corriger chaque semaine. Je remplace tout ça par des rapports qui s'actualisent seuls.",
+      },
+      {
+        title: "Des rapports standards qui ne répondent pas à vos questions",
+        text: "Les rapports intégrés montrent ce que l'éditeur du logiciel croyait utile. Je conçois les rapports sur mesure que votre équipe demande vraiment.",
+      },
+      {
+        title: "Des rapports lents ou qui ne fonctionnent plus",
+        text: "Des requêtes qui expirent, des rapports qui brisent après une mise à jour. J'optimise le SQL et je place la logique là où elle est facile à entretenir.",
+      },
+    ],
+  }}
+  deliverables={{
+    heading: "Ce que vous obtenez",
+    items: [
+      { title: "Rapports SQL Server sur mesure", text: "Rapports paginés, Excel ou PDF. Sur demande, planifiés ou envoyés par courriel aux bonnes personnes chaque lundi." },
+      { title: "Tableaux de bord Power BI", text: "Des tableaux de bord interactifs qui s'actualisent automatiquement. Vous n'utilisez pas Power BI? Je peux livrer un tableau de bord web hébergé." },
+      { title: "Une couche de rapports propre", text: "Des vues SQL documentées où chaque règle d'affaires est écrite une seule fois. Les nouveaux rapports se construisent beaucoup plus vite." },
+      { title: "Des définitions communes", text: "Un court glossaire : ce qui compte comme revenu, coût, marge ou travaux en cours, et d'où vient chaque chiffre." },
+      { title: "Formation et transfert", text: "Votre équipe apprend à utiliser, filtrer et ajuster les rapports. Vous n'avez pas besoin de moi pour chaque changement." },
+      { title: "Soutien continu", text: "Quand votre logiciel est mis à jour ou que vos questions changent, j'ajuste les rapports pour qu'ils continuent de fonctionner." },
+    ],
+  }}
+  steps={{
+    heading: "Déroulement d'un projet de rapports",
+    items: [
+      { title: "Analyse", text: "J'examine vos rapports actuels et votre base de données, et je vous demande quelles décisions les chiffres doivent appuyer." },
+      { title: "Définition", text: "Nous nous entendons sur les définitions et nous les mettons par écrit, pour éviter tout débat plus tard sur le sens d'un chiffre." },
+      { title: "Réalisation", text: "Vous voyez tôt un premier rapport fonctionnel sur vos vraies données. Ensuite, nous l'améliorons ensemble, un rapport à la fois." },
+      { title: "Transfert", text: "Documentation, formation de votre équipe et soutien quand vous avez besoin de changements." },
+    ],
+  }}
+  faq={{
+    heading: "Rapports et tableaux de bord : questions fréquentes",
+    items: [
+      {
+        q: "Ai-je besoin de Power BI?",
+        a: "Non. Power BI est un bon choix si vous utilisez déjà Microsoft 365, mais je conçois aussi des rapports SQL Server Reporting Services, des rapports Excel qui s'actualisent seuls et des tableaux de bord web hébergés. Je vous recommande ce qui convient à votre environnement.",
+      },
+      {
+        q: "Pouvez-vous produire des rapports à partir de la base de données de mon ERP?",
+        a: "S'il fonctionne sur SQL Server, comme la plupart des ERP de construction et de service sur le terrain, oui. Je travaille avec un accès en lecture seule et, si possible, sur une copie réservée aux rapports, pour ne pas toucher à votre système en production.",
+      },
+      {
+        q: "Les rapports continueront-ils de fonctionner après une mise à jour du logiciel?",
+        a: "Je bâtis les rapports sur des vues SQL documentées. Quand une mise à jour modifie une table, il y a un seul endroit à corriger, pas cinquante rapports. Du soutien est offert quand ça arrive.",
+      },
+      {
+        q: "Mon équipe pourra-t-elle modifier les rapports plus tard?",
+        a: "Oui. Vous recevez le code source, la documentation et une formation. Rien n'est verrouillé.",
+      },
+      {
+        q: "Combien de temps dure un projet de rapports?",
+        a: "Ça dépend de la portée. Je vise à vous présenter tôt un premier rapport utile, et je vous donne un échéancier une fois le travail cadré ensemble.",
+      },
+    ],
+  }}
+  cta={{
+    heading: "Vous en avez assez des rapports auxquels personne ne se fie?",
+    text: "Réservez un appel gratuit de 30 minutes. Apportez un exemple de rapport qui vous complique la vie et nous verrons ensemble comment le régler.",
+  }}
+/>

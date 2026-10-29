@@ -1,0 +1,95 @@
+---
+import ServicePage from "../../../layouts/ServicePage.astro";
+---
+
+<ServicePage
+  lang="fr"
+  route="healthCheck"
+  title="Bilan de santé des données : audit de base de données"
+  description="Audit de base de données et évaluation de la qualité des données, à portée fixe. Un rapport clair : ce qui cloche, pourquoi et quoi corriger en premier."
+  crumb="Bilan de santé des données"
+  eyebrow="Bilan de santé des données"
+  h1="Bilan de santé des données : un audit de base de données à portée fixe"
+  lead="Le Bilan de santé des données est un audit de base de données et une évaluation de la qualité des données, avec une portée fixe. J'examine vos données, vos rapports et votre environnement SQL Server, puis je vous remets un rapport en langage clair : ce qui cloche et quoi corriger en premier."
+  who={{
+    heading: "Un bon point de départ si…",
+    intro: "Vous savez que quelque chose cloche dans vos données, sans savoir exactement quoi ni par où commencer.",
+    items: [
+      "Vous ne savez pas d'où viennent vos problèmes de rapports",
+      "Vous prévoyez changer de système et voulez savoir ce que vous vous apprêtez à transférer",
+      "Vous avez hérité d'une base de données que personne n'a documentée",
+      "Vous voulez un deuxième avis avant d'investir dans des tableaux de bord",
+    ],
+  }}
+  problems={{
+    heading: "Ce qu'un audit de base de données révèle habituellement",
+    items: [
+      {
+        title: "Des problèmes de qualité des données",
+        text: "Clients en double, codes de coût manquants, fiches orphelines et champs de texte libre utilisés de dix façons différentes.",
+      },
+      {
+        title: "Des rapports à la logique contradictoire",
+        text: "Deux rapports qui devraient concorder, mais qui ne concordent pas, parce que chacun calcule le même chiffre différemment.",
+      },
+      {
+        title: "Des problèmes de performance",
+        text: "Requêtes lentes, index manquants et une base de données qui grossit sans que personne sache pourquoi.",
+      },
+      {
+        title: "Des risques cachés",
+        text: "Des sauvegardes jamais testées, tout le monde connecté en administrateur et une seule personne qui sait comment tout fonctionne.",
+      },
+    ],
+  }}
+  deliverables={{
+    heading: "Ce que vous obtenez",
+    intro: "Un portrait clair de vos données et une courte liste d'actions concrètes, que vous travailliez avec moi par la suite ou non.",
+    items: [
+      { title: "Un rapport écrit", text: "Des constats classés selon leur impact et expliqués en langage clair, pour les propriétaires et les contrôleurs, pas seulement pour l'informatique." },
+      { title: "Une fiche de qualité des données", text: "Doublons, valeurs manquantes et liens brisés entre les fiches, mesurés table par table." },
+      { title: "Un examen des rapports", text: "Lesquels de vos rapports clés concordent, lesquels ne concordent pas, et pourquoi." },
+      { title: "Un examen de SQL Server", text: "Sauvegardes, sécurité, entretien et performance de base, comparés aux bonnes pratiques." },
+      { title: "Une liste d'actions priorisées", text: "Quoi corriger en premier, ce qui peut attendre et ce que votre équipe peut faire à l'interne." },
+      { title: "Une rencontre de présentation", text: "Nous passons les constats en revue ensemble et vous pouvez poser toutes vos questions." },
+    ],
+  }}
+  steps={{
+    heading: "Déroulement du Bilan de santé des données",
+    items: [
+      { title: "Démarrage", text: "Un court appel pour convenir de la portée, des systèmes à examiner et des questions qui vous importent le plus." },
+      { title: "Accès", text: "Un accès en lecture seule, ou une copie de sauvegarde restaurée sur un poste sécurisé. Rien n'est modifié dans votre système." },
+      { title: "Examen", text: "J'analyse les données, je vérifie les rapports clés et j'examine la configuration SQL Server." },
+      { title: "Rapport", text: "Vous recevez le rapport écrit et nous le passons en revue ensemble." },
+    ],
+  }}
+  faq={{
+    heading: "Bilan de santé des données : questions fréquentes",
+    items: [
+      {
+        q: "Pourquoi une portée fixe?",
+        a: "Pour que vous sachiez exactement ce que vous obtiendrez, et quand, avant de commencer. C'est un premier projet bien délimité, pas de la consultation sans fin.",
+      },
+      {
+        q: "Avez-vous besoin d'accéder à notre système en production?",
+        a: "Un accès en lecture seule suffit. Si vous préférez, je peux travailler à partir d'une copie de sauvegarde restaurée sur un poste sécurisé. Je ne modifie jamais de données pendant un bilan.",
+      },
+      {
+        q: "Nos données restent-elles confidentielles?",
+        a: "Oui. Je signe volontiers une entente de confidentialité, l'accès est en lecture seule et toutes les copies sont supprimées à la fin du mandat.",
+      },
+      {
+        q: "Combien de temps ça prend?",
+        a: "Ça dépend de la taille de vos systèmes. Vous obtenez une date de livraison au démarrage, et l'examen est volontairement court.",
+      },
+      {
+        q: "Qu'arrive-t-il après le bilan?",
+        a: "Le rapport vous appartient. Vous pouvez y donner suite vous-même, avec votre fournisseur informatique ou avec moi. Aucune obligation de continuer.",
+      },
+    ],
+  }}
+  cta={{
+    heading: "Commencez par un portrait clair",
+    text: "Le Bilan de santé des données est la façon la plus simple de découvrir ce que vos données peuvent faire pour vous, et ce qui les freine. Parlons de vos systèmes.",
+  }}
+/>

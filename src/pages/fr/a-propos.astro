@@ -1,0 +1,124 @@
+---
+import { Image } from "astro:assets";
+import Base from "../../layouts/Base.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import CtaBand from "../../components/CtaBand.astro";
+import stefan from "../../assets/stefan.png";
+import { site } from "../../config/site";
+
+const lang = "fr";
+const crumbs = [{ name: "À propos", key: "about" as const }];
+
+const principles = [
+  { title: "Un langage clair", text: "Vous comprendrez ce que j'ai fait et pourquoi. Pas de jargon, pas de boîte noire." },
+  { title: "Regarder avant de toucher", text: "Je commence avec un accès en lecture seule. Vos systèmes en production ne courent aucun risque." },
+  { title: "Des résultats rapides", text: "Vous voyez tôt des résultats concrets sur vos propres données, pas une présentation PowerPoint." },
+  { title: "Rien de verrouillé", text: "La documentation, le code source et les comptes vous appartiennent. Votre équipe peut prendre le relais en tout temps." },
+];
+---
+
+<Base
+  lang={lang}
+  route="about"
+  title="Stefan Stahuber, consultant SQL et en données | WebPretzel"
+  description="Stefan Stahuber est consultant SQL et en données à Montréal, avec des années d'expérience dans les logiciels de construction et de service sur le terrain."
+  crumbs={crumbs}
+>
+  <section class="hero page-hero">
+    <div class="wrap">
+      <Breadcrumbs lang={lang} crumbs={crumbs} />
+      <div class="about-grid">
+        <div>
+          <span class="eyebrow">À propos de WebPretzel</span>
+          <h1>Bonjour, je m'appelle Stefan. Je rends les données d'affaires utilisables.</h1>
+          <div class="prose">
+            <p class="hero-lead">
+              Je suis Stefan Stahuber, la personne derrière WebPretzel : consultant SQL et en données établi à Montréal, au service de PME partout
+              au Canada.
+            </p>
+            <p>
+              Avant WebPretzel, j'ai passé cinq ans chez un éditeur de logiciels ERP pour les entreprises de construction et de service sur le
+              terrain. D'abord au soutien technique des comptes clés, puis comme administrateur infonuagique des environnements SQL Server sur
+              lesquels ces clients comptaient.
+            </p>
+            <p>
+              J'ai vu les mêmes problèmes revenir sans cesse : des rapports auxquels personne ne se fiait, des migrations qui perdaient des années
+              d'historique et des propriétaires qui ne voyaient la rentabilité de leurs chantiers que trop tard. La plupart n'étaient pas des
+              problèmes de logiciel, mais des problèmes de données. WebPretzel existe pour les régler.
+            </p>
+          </div>
+        </div>
+        <Image
+          src={stefan}
+          alt="Stefan Stahuber, fondateur de WebPretzel, croquant dans un bretzel à son bureau"
+          width={360}
+          widths={[360, 720]}
+          sizes="(min-width: 60rem) 360px, 80vw"
+          class="about-photo"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="principles">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="principles">Ma façon de travailler</h2>
+      </div>
+      <div class="grid grid-4">
+        {
+          principles.map((p) => (
+            <div class="card pain">
+              <h3>{p.title}</h3>
+              <p>{p.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="background">
+    <div class="wrap split split-top">
+      <div>
+        <h2 id="background">Parcours</h2>
+        <p class="lead-muted">
+          Du travail technique, avec assez d'années en vente et en gestion de comptes pour savoir qu'un rapport ne vaut quelque chose que si
+          quelqu'un agit en conséquence.
+        </p>
+      </div>
+      <ul class="timeline">
+        <li>
+          <h3>Logiciels ERP de construction et de service sur le terrain</h3>
+          <p>Cinq ans de soutien technique aux comptes clés, puis d'administration infonuagique des environnements SQL Server des clients.</p>
+        </li>
+        <li>
+          <h3>Vente et gestion de comptes</h3>
+          <p>Gestion de comptes en Allemagne et vente en Colombie-Britannique, en contact direct avec des propriétaires d'entreprise.</p>
+        </li>
+        <li>
+          <h3>Formation</h3>
+          <p>Bachelor Professional en commerce (CCI), Munich, et diplôme en gestion administrative.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="details">
+    <div class="wrap split split-top">
+      <div>
+        <h2 id="details">En bref</h2>
+      </div>
+      <dl class="facts">
+        <div><dt>Établi à</dt><dd>Montréal, Québec. Au service des clients partout au Canada.</dd></div>
+        <div><dt>Langues</dt><dd>Anglais, allemand et français</dd></div>
+        <div><dt>Courriel</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
+        <div><dt>Téléphone</dt><dd><a href={site.phoneHref}>{site.phone}</a></dd></div>
+        <div><dt>LinkedIn</dt><dd><a href={site.linkedin} rel="noopener">Stefan Stahuber</a></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <CtaBand lang={lang} heading="Parlons de vos données" text="Dites-moi ce qui ne fonctionne pas. En 30 minutes, vous saurez si je peux vous aider." />
+</Base>

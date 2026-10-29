@@ -1,0 +1,125 @@
+---
+import { Image } from "astro:assets";
+import Base from "../layouts/Base.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import CtaBand from "../components/CtaBand.astro";
+import stefan from "../assets/stefan.png";
+import { site } from "../config/site";
+import { url } from "../i18n/routes";
+
+const lang = "en";
+const crumbs = [{ name: "About", key: "about" as const }];
+
+const principles = [
+  { title: "Plain language", text: "You'll understand what I did and why. No jargon, no black boxes." },
+  { title: "Look before I touch", text: "I start with read-only access. Your live systems are never put at risk." },
+  { title: "Early results", text: "You see working output on your own data early, not a slide deck." },
+  { title: "Nothing locked in", text: "Documentation, source code and accounts are yours. Your team can take over at any time." },
+];
+---
+
+<Base
+  lang={lang}
+  route="about"
+  title="About Stefan Stahuber, SQL & Data Consultant | WebPretzel"
+  description="Stefan Stahuber is a Montreal SQL and data consultant with years of experience in construction and field-service software. The person behind WebPretzel."
+  crumbs={crumbs}
+>
+  <section class="hero page-hero">
+    <div class="wrap">
+      <Breadcrumbs lang={lang} crumbs={crumbs} />
+      <div class="about-grid">
+        <div>
+          <span class="eyebrow">About WebPretzel</span>
+          <h1>Hi, I'm Stefan. I make business data usable.</h1>
+          <div class="prose">
+            <p class="hero-lead">
+              I'm Stefan Stahuber, the person behind WebPretzel: an SQL and data consultant based in Montreal, working with small and
+              mid-sized businesses across Canada.
+            </p>
+            <p>
+              Before WebPretzel, I spent five years at a company that builds ERP software for construction and field-service businesses. First
+              in technical support for key accounts, then as a cloud administrator running the SQL Server environments those customers depended on.
+            </p>
+            <p>
+              I saw the same problems again and again: reports nobody trusted, migrations that lost years of history, and owners who couldn't see
+              job profitability until it was too late. Most of them weren't software problems. They were data problems. WebPretzel exists to fix
+              them.
+            </p>
+          </div>
+        </div>
+        <Image
+          src={stefan}
+          alt="Stefan Stahuber, founder of WebPretzel, biting into a pretzel at his desk"
+          width={360}
+          widths={[360, 720]}
+          sizes="(min-width: 60rem) 360px, 80vw"
+          class="about-photo"
+          loading="eager"
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="principles">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="principles">How I work</h2>
+      </div>
+      <div class="grid grid-4">
+        {
+          principles.map((p) => (
+            <div class="card pain">
+              <h3>{p.title}</h3>
+              <p>{p.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="background">
+    <div class="wrap split split-top">
+      <div>
+        <h2 id="background">Background</h2>
+        <p class="lead-muted">Technical work, with enough time in sales and account management to know that a report only matters if someone acts on it.</p>
+      </div>
+      <ul class="timeline">
+        <li>
+          <h3>Construction and field-service ERP software</h3>
+          <p>Five years of key-account technical support, then cloud administration of customer SQL Server environments.</p>
+        </li>
+        <li>
+          <h3>Sales and account management</h3>
+          <p>Account management in Germany and sales in British Columbia, working directly with business owners.</p>
+        </li>
+        <li>
+          <h3>Education</h3>
+          <p>Bachelor Professional of Trade and Commerce (CCI), Munich, and a diploma in administrative management.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="details">
+    <div class="wrap split split-top">
+      <div>
+        <h2 id="details">Quick facts</h2>
+      </div>
+      <dl class="facts">
+        <div><dt>Based in</dt><dd>Montreal, Quebec. Serving clients across Canada.</dd></div>
+        <div><dt>Languages</dt><dd>English, German and French</dd></div>
+        <div><dt>Email</dt><dd><a href={`mailto:${site.email}`}>{site.email}</a></dd></div>
+        <div><dt>Phone</dt><dd><a href={site.phoneHref}>{site.phone}</a></dd></div>
+        <div><dt>LinkedIn</dt><dd><a href={site.linkedin} rel="noopener">Stefan Stahuber</a></dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <CtaBand
+    lang={lang}
+    heading="Let's talk about your data"
+    text="Tell me what's not working. In 30 minutes you'll know whether I can help."
+  />
+</Base>

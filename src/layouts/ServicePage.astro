@@ -1,0 +1,127 @@
+---
+// Shared structure for service and industry pages:
+// hero → who it's for → typical problems → what you get → [extra slot] → how it works → FAQ → CTA.
+import Base, { type FaqItem } from "./Base.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import Faq from "../components/Faq.astro";
+import SelectedWork from "../components/SelectedWork.astro";
+import CtaBand from "../components/CtaBand.astro";
+import { url, type Lang, type RouteKey } from "../i18n/routes";
+import { t } from "../i18n/ui";
+
+interface Item {
+  title: string;
+  text: string;
+}
+interface Props {
+  lang: Lang;
+  route: RouteKey;
+  title: string;
+  description: string;
+  crumb: string;
+  eyebrow: string;
+  h1: string;
+  lead: string;
+  who: { heading: string; intro: string; items: string[] };
+  problems: { heading: string; items: Item[] };
+  deliverables: { heading: string; intro?: string; items: Item[] };
+  steps: { heading: string; items: Item[] };
+  faq: { heading: string; items: FaqItem[] };
+  cta: { heading: string; text: string };
+}
+
+const p = Astro.props;
+const ui = t(p.lang);
+const crumbs = [{ name: p.crumb, key: p.route }];
+---
+
+<Base lang={p.lang} route={p.route} title={p.title} description={p.description} crumbs={crumbs} faq={p.faq.items}>
+  <section class="hero page-hero">
+    <div class="wrap">
+      <Breadcrumbs lang={p.lang} crumbs={crumbs} />
+      <div class="page-hero-text">
+        <span class="eyebrow">{p.eyebrow}</span>
+        <h1>{p.h1}</h1>
+        <p class="hero-lead">{p.lead}</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href={url("contact", p.lang)}>{ui.cta}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="who">
+    <div class="wrap split split-top">
+      <div>
+        <h2 id="who">{p.who.heading}</h2>
+        <p class="lead-muted">{p.who.intro}</p>
+      </div>
+      <ul class="checks">
+        {p.who.items.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="problems">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="problems">{p.problems.heading}</h2>
+      </div>
+      <div class="grid grid-2">
+        {
+          p.problems.items.map((item) => (
+            <div class="card pain">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="deliverables">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="deliverables">{p.deliverables.heading}</h2>
+        {p.deliverables.intro && <p>{p.deliverables.intro}</p>}
+      </div>
+      <div class="grid grid-3">
+        {
+          p.deliverables.items.map((item) => (
+            <div class="card deliverable">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <slot />
+
+  <section class="section section-dark" aria-labelledby="how">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="how">{p.steps.heading}</h2>
+      </div>
+      <ol class="steps steps-dark grid grid-4">
+        {
+          p.steps.items.map((item) => (
+            <li>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <Faq heading={p.faq.heading} items={p.faq.items} />
+
+  <SelectedWork lang={p.lang} />
+
+  <CtaBand lang={p.lang} heading={p.cta.heading} text={p.cta.text} />
+</Base>

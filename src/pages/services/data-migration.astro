@@ -1,0 +1,94 @@
+---
+import ServicePage from "../../layouts/ServicePage.astro";
+---
+
+<ServicePage
+  lang="en"
+  route="migration"
+  title="ERP & SQL Server Data Migration Consultant | WebPretzel"
+  description="Switching ERP or business systems? I map, clean, migrate and reconcile your data so your history comes with you. Montreal data migration consultant."
+  crumb="Data migration"
+  eyebrow="Data migration"
+  h1="ERP data migration without losing your history"
+  lead="I'm a data migration consultant for companies switching ERP, accounting or field-service systems. I map, clean, migrate and reconcile your data in SQL Server, so the new system starts with history you can trust."
+  who={{
+    heading: "Who this is for",
+    intro: "Companies changing systems who can't afford to lose years of jobs, customers and costs, or to start the new system with bad data.",
+    items: [
+      "You're moving to a new ERP, accounting or field-service system",
+      "You want more history than the vendor's import template allows",
+      "Your data has duplicates, old codes and records nobody uses",
+      "You're merging two companies or systems into one",
+    ],
+  }}
+  problems={{
+    heading: "Where ERP data migrations usually go wrong",
+    items: [
+      {
+        title: "Only the basics come across",
+        text: "Import templates take open items and master records. Years of job costs, service history and closed invoices get left behind.",
+      },
+      {
+        title: "Bad data moves with you",
+        text: "Duplicate customers, inconsistent cost codes and inactive items get copied straight into the new system.",
+      },
+      {
+        title: "Nobody can prove it's right",
+        text: "Opening balances don't tie out and nobody knows why. Trust in the new system drops on day one.",
+      },
+      {
+        title: "Left to the last weekend",
+        text: "The data is treated as a go-live task instead of a project. Problems show up when there's no time to fix them.",
+      },
+    ],
+  }}
+  deliverables={{
+    heading: "What you get",
+    items: [
+      { title: "A data mapping document", text: "Every field from the old system to the new one, with each decision written down and agreed." },
+      { title: "Data cleanup", text: "Duplicates merged, codes standardized, inactive records archived, before anything is loaded." },
+      { title: "Repeatable migration scripts", text: "SQL Server scripts that run the whole migration the same way every time, so test loads are cheap to repeat." },
+      { title: "Reconciliation reports", text: "Counts and totals, old against new, by customer, job and period. Something you can sign off on." },
+      { title: "A searchable history archive", text: "Anything you don't migrate stays queryable in an archive database with simple reports, so you can retire the old system." },
+      { title: "Cutover plan and go-live support", text: "A step-by-step plan for the final load, and support during the first weeks on the new system." },
+    ],
+  }}
+  steps={{
+    heading: "How a data migration works",
+    items: [
+      { title: "Assess", text: "I profile your current data: what's there, what's clean, what's missing, and how much history is worth moving." },
+      { title: "Map and clean", text: "We map old to new together, and I clean the data at the source or in staging." },
+      { title: "Test loads", text: "Several full test migrations with reconciliation, so problems surface early and not on go-live day." },
+      { title: "Cut over", text: "Final load, final reconciliation, and support while your team settles into the new system." },
+    ],
+  }}
+  faq={{
+    heading: "Data migration: common questions",
+    items: [
+      {
+        q: "How much history should we migrate?",
+        a: "It depends on what your team actually looks up. A common approach is open items plus a few years of detail in the new system, with older history kept in a searchable archive. We decide together during the assessment.",
+      },
+      {
+        q: "Do you work with our new software vendor?",
+        a: "Yes. The vendor's implementation team configures the new system. I handle extraction, cleanup, transformation and reconciliation, and coordinate with them on the import format.",
+      },
+      {
+        q: "What happens to the old system's data?",
+        a: "Nothing is thrown away. Data that isn't migrated can live in an archive database with reports, so you can stop paying for the old system and still find what you need.",
+      },
+      {
+        q: "Can you migrate from Access, Excel or an older database?",
+        a: "Yes. SQL Server, Access, Excel, CSV exports and most databases that can export their data.",
+      },
+      {
+        q: "What if the migration uncovers problems?",
+        a: "That's what the test loads are for. Problems are found and fixed during testing, with time to decide what to do, instead of during the go-live weekend.",
+      },
+    ],
+  }}
+  cta={{
+    heading: "Planning a system switch?",
+    text: "The earlier the data is part of the plan, the smoother go-live is. Book a free 30-minute call to talk through your migration.",
+  }}
+/>

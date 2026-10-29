@@ -1,0 +1,52 @@
+---
+import Base from "../layouts/Base.astro";
+import Breadcrumbs from "../components/Breadcrumbs.astro";
+import ContactForm from "../components/ContactForm.astro";
+import { site } from "../config/site";
+
+const lang = "en";
+const crumbs = [{ name: "Contact", key: "contact" as const }];
+---
+
+<Base
+  lang={lang}
+  route="contact"
+  title="Contact WebPretzel | Book a Free 30-Minute Call"
+  description="Tell me what's not working with your data. Book a free 30-minute call with a Montreal SQL and data consultant. Usually a reply within one business day."
+  crumbs={crumbs}
+>
+  <section class="hero page-hero">
+    <div class="wrap">
+      <Breadcrumbs lang={lang} crumbs={crumbs} />
+      <div class="page-hero-text">
+        <span class="eyebrow">Contact</span>
+        <h1>Get in touch</h1>
+        <p class="hero-lead">
+          Tell me what's not working with your data. I usually reply within one business day to set up a free 30-minute call.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 class="visually-hidden">Send a message</h2>
+        <ContactForm lang={lang} />
+      </div>
+      <aside class="contact-aside" aria-labelledby="direct">
+        <h2 id="direct">Prefer email or phone?</h2>
+        <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+        <p><a href={site.phoneHref}>{site.phone}</a></p>
+        <p class="muted">Montreal, Quebec — serving clients across Canada.</p>
+
+        <h2>What happens next</h2>
+        <ol class="next-steps">
+          <li>I usually reply within one business day.</li>
+          <li>We book a free 30-minute call at a time that suits you.</li>
+          <li>You get an honest answer on whether I can help, and what a first step looks like.</li>
+        </ol>
+      </aside>
+    </div>
+  </section>
+</Base>

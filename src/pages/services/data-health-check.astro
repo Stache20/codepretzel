@@ -1,0 +1,95 @@
+---
+import ServicePage from "../../layouts/ServicePage.astro";
+---
+
+<ServicePage
+  lang="en"
+  route="healthCheck"
+  title="Data Health Check: Database Audit & Data Quality Review"
+  description="A fixed-scope database audit and data quality assessment. You get a plain-language written report of what's wrong, why it matters and what to fix first."
+  crumb="Data Health Check"
+  eyebrow="Data Health Check"
+  h1="Data Health Check: a fixed-scope database audit"
+  lead="The Data Health Check is a database audit and data quality assessment with a fixed scope. I review your data, your reports and your SQL Server setup, then give you a plain-language report of what's wrong and what to fix first."
+  who={{
+    heading: "A good first step if…",
+    intro: "You know something is off with your data, but not exactly what, or where to start.",
+    items: [
+      "You're not sure where your reporting problems come from",
+      "You're planning a system switch and want to know what you're about to move",
+      "You inherited a database that nobody documented",
+      "You want a second opinion before investing in dashboards",
+    ],
+  }}
+  problems={{
+    heading: "What a database audit usually uncovers",
+    items: [
+      {
+        title: "Data quality issues",
+        text: "Duplicate customers, missing cost codes, orphaned records and free-text fields used in ten different ways.",
+      },
+      {
+        title: "Reports with conflicting logic",
+        text: "Two reports that should agree but don't, because each one calculates the same number differently.",
+      },
+      {
+        title: "Performance problems",
+        text: "Slow queries, missing indexes and a database that keeps growing without anyone knowing why.",
+      },
+      {
+        title: "Hidden risks",
+        text: "Backups nobody has tested, everyone logged in as an administrator, and one person who knows how everything works.",
+      },
+    ],
+  }}
+  deliverables={{
+    heading: "What you get",
+    intro: "A clear picture of your data and a short list of practical next steps, whether you work with me afterwards or not.",
+    items: [
+      { title: "A written report", text: "Findings ranked by impact and explained in plain language, for owners and controllers, not just IT." },
+      { title: "Data quality scorecard", text: "Duplicates, missing values and broken links between records, measured table by table." },
+      { title: "Reporting review", text: "Which of your key reports agree, which don't, and why." },
+      { title: "SQL Server review", text: "Backups, security, maintenance and performance basics, checked against good practice." },
+      { title: "A prioritized action list", text: "What to fix first, what can wait, and what your team can handle internally." },
+      { title: "A walkthrough meeting", text: "We go through the findings together and you can ask anything." },
+    ],
+  }}
+  steps={{
+    heading: "How the Data Health Check works",
+    items: [
+      { title: "Kickoff", text: "A short call to agree on scope, the systems to review and the questions you most want answered." },
+      { title: "Access", text: "Read-only access, or a backup copy restored on a secure machine. Nothing in your system is changed." },
+      { title: "Review", text: "I profile the data, test the key reports and review the SQL Server setup." },
+      { title: "Report", text: "You receive the written report and we walk through it together." },
+    ],
+  }}
+  faq={{
+    heading: "Data Health Check: common questions",
+    items: [
+      {
+        q: "Why a fixed scope?",
+        a: "So you know exactly what you'll get, and when, before we start. It's a contained first project, not open-ended consulting.",
+      },
+      {
+        q: "Do you need access to our live system?",
+        a: "Read-only access is enough. If you prefer, I can work from a backup restored on a secure machine. I never change data during a Health Check.",
+      },
+      {
+        q: "Is our data kept confidential?",
+        a: "Yes. I'm happy to sign an NDA, access is read-only, and any copies are deleted when the work is done.",
+      },
+      {
+        q: "How long does it take?",
+        a: "It depends on the size of your systems. You get a delivery date at kickoff, and the review itself is deliberately kept short.",
+      },
+      {
+        q: "What happens after the Health Check?",
+        a: "The report is yours. You can act on it yourself, with your IT provider, or with me. There's no obligation to continue.",
+      },
+    ],
+  }}
+  cta={{
+    heading: "Start with a clear picture",
+    text: "A Data Health Check is the easiest way to find out what your data can do for you, and what's holding it back. Let's talk about your systems.",
+  }}
+/>

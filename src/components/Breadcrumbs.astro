@@ -1,0 +1,30 @@
+---
+import { url, type Lang } from "../i18n/routes";
+import { t } from "../i18n/ui";
+import type { Crumb } from "../layouts/Base.astro";
+
+interface Props {
+  lang: Lang;
+  crumbs: Crumb[];
+}
+const { lang, crumbs } = Astro.props;
+const ui = t(lang);
+const last = crumbs.length - 1;
+---
+
+<nav class="breadcrumbs" aria-label={lang === "fr" ? "Fil d'Ariane" : "Breadcrumb"}>
+  <ol>
+    <li><a href={url("home", lang)}>{ui.breadcrumbHome}</a></li>
+    {
+      crumbs.map((c, i) => (
+        <li>
+          {i === last ? (
+            <span aria-current="page">{c.name}</span>
+          ) : (
+            <a href={url(c.key, lang)}>{c.name}</a>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+</nav>

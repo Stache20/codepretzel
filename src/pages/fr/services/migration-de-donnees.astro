@@ -1,0 +1,94 @@
+---
+import ServicePage from "../../../layouts/ServicePage.astro";
+---
+
+<ServicePage
+  lang="fr"
+  route="migration"
+  title="Consultant en migration de données ERP | WebPretzel"
+  description="Vous changez d'ERP? Je fais la correspondance, le nettoyage, la migration et le rapprochement de vos données pour conserver votre historique."
+  crumb="Migration de données"
+  eyebrow="Migration de données"
+  h1="Migration de données ERP sans perdre votre historique"
+  lead="Je suis consultant en migration de données pour les entreprises qui changent d'ERP, de logiciel comptable ou de logiciel de service sur le terrain. Je fais la correspondance, le nettoyage, la migration et le rapprochement de vos données dans SQL Server, pour que le nouveau système démarre avec un historique fiable."
+  who={{
+    heading: "À qui s'adresse ce service",
+    intro: "Aux entreprises qui changent de système et qui ne peuvent pas se permettre de perdre des années de chantiers, de clients et de coûts, ni de démarrer avec des données erronées.",
+    items: [
+      "Vous passez à un nouvel ERP, logiciel comptable ou logiciel de service sur le terrain",
+      "Vous voulez plus d'historique que ce que permet le gabarit d'importation de l'éditeur",
+      "Vos données contiennent des doublons, d'anciens codes et des fiches que personne n'utilise",
+      "Vous fusionnez deux entreprises ou deux systèmes",
+    ],
+  }}
+  problems={{
+    heading: "Là où les migrations de données ERP dérapent habituellement",
+    items: [
+      {
+        title: "Seul l'essentiel est transféré",
+        text: "Les gabarits d'importation prennent les postes ouverts et les fiches principales. Des années de coûts de chantier, d'historique de service et de factures fermées restent derrière.",
+      },
+      {
+        title: "Les mauvaises données suivent",
+        text: "Clients en double, codes de coût incohérents et articles inactifs sont copiés tels quels dans le nouveau système.",
+      },
+      {
+        title: "Personne ne peut prouver que c'est juste",
+        text: "Les soldes d'ouverture ne concordent pas et personne ne sait pourquoi. La confiance envers le nouveau système chute dès le premier jour.",
+      },
+      {
+        title: "Laissé à la dernière fin de semaine",
+        text: "Les données sont traitées comme une tâche de mise en service plutôt que comme un projet. Les problèmes apparaissent quand il n'y a plus de temps pour les régler.",
+      },
+    ],
+  }}
+  deliverables={{
+    heading: "Ce que vous obtenez",
+    items: [
+      { title: "Un document de correspondance", text: "Chaque champ, de l'ancien système au nouveau, avec chaque décision consignée et approuvée." },
+      { title: "Le nettoyage des données", text: "Doublons fusionnés, codes uniformisés, fiches inactives archivées, avant tout chargement." },
+      { title: "Des scripts de migration reproductibles", text: "Des scripts SQL Server qui exécutent toute la migration de la même façon chaque fois, pour que les chargements d'essai soient faciles à refaire." },
+      { title: "Des rapports de rapprochement", text: "Comptes et totaux, ancien système contre nouveau, par client, par chantier et par période. De quoi approuver en toute confiance." },
+      { title: "Une archive consultable", text: "Ce qui n'est pas migré reste accessible dans une base d'archives avec des rapports simples, pour que vous puissiez abandonner l'ancien système." },
+      { title: "Plan de bascule et soutien au démarrage", text: "Un plan étape par étape pour le chargement final et du soutien pendant les premières semaines sur le nouveau système." },
+    ],
+  }}
+  steps={{
+    heading: "Déroulement d'une migration de données",
+    items: [
+      { title: "Évaluer", text: "Je dresse le portrait de vos données actuelles : ce qu'il y a, ce qui est propre, ce qui manque et combien d'historique vaut la peine d'être transféré." },
+      { title: "Faire la correspondance et nettoyer", text: "Nous établissons ensemble la correspondance entre l'ancien et le nouveau, et je nettoie les données à la source ou dans une zone de préparation." },
+      { title: "Chargements d'essai", text: "Plusieurs migrations complètes d'essai avec rapprochement, pour que les problèmes ressortent tôt, et non le jour de la mise en service." },
+      { title: "Basculer", text: "Chargement final, rapprochement final et soutien pendant que votre équipe s'habitue au nouveau système." },
+    ],
+  }}
+  faq={{
+    heading: "Migration de données : questions fréquentes",
+    items: [
+      {
+        q: "Combien d'historique devrions-nous migrer?",
+        a: "Ça dépend de ce que votre équipe consulte vraiment. Une approche courante : les postes ouverts et quelques années de détail dans le nouveau système, et l'historique plus ancien dans une archive consultable. Nous le décidons ensemble lors de l'évaluation.",
+      },
+      {
+        q: "Travaillez-vous avec l'éditeur de notre nouveau logiciel?",
+        a: "Oui. L'équipe d'implantation de l'éditeur configure le nouveau système. Je m'occupe de l'extraction, du nettoyage, de la transformation et du rapprochement, et je me coordonne avec elle sur le format d'importation.",
+      },
+      {
+        q: "Qu'arrive-t-il aux données de l'ancien système?",
+        a: "Rien n'est jeté. Les données non migrées peuvent être conservées dans une base d'archives avec des rapports, pour que vous cessiez de payer pour l'ancien système tout en retrouvant ce dont vous avez besoin.",
+      },
+      {
+        q: "Pouvez-vous migrer depuis Access, Excel ou une ancienne base de données?",
+        a: "Oui. SQL Server, Access, Excel, fichiers CSV et la plupart des bases de données qui permettent d'exporter leurs données.",
+      },
+      {
+        q: "Et si la migration révèle des problèmes?",
+        a: "C'est justement le rôle des chargements d'essai. Les problèmes sont repérés et corrigés pendant les essais, avec le temps de décider quoi faire, plutôt que pendant la fin de semaine de mise en service.",
+      },
+    ],
+  }}
+  cta={{
+    heading: "Vous prévoyez changer de système?",
+    text: "Plus les données font partie du plan tôt, plus la mise en service se passe bien. Réservez un appel gratuit de 30 minutes pour parler de votre migration.",
+  }}
+/>

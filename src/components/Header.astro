@@ -1,0 +1,87 @@
+---
+import { routes, url, type Lang, type RouteKey } from "../i18n/routes";
+import { t } from "../i18n/ui";
+
+interface Props {
+  lang: Lang;
+  route: RouteKey;
+}
+const { lang, route } = Astro.props;
+const ui = t(lang);
+const other: Lang = lang === "en" ? "fr" : "en";
+const serviceKeys = ["reporting", "migration", "healthCheck", "webApps"] as const;
+const current = (key: RouteKey) => (key === route ? "page" : undefined);
+const inServices = (serviceKeys as readonly RouteKey[]).includes(route);
+// A 404 has no equivalent page, so its toggle goes to the other language's home.
+const toggleHref = routes[route === "notFound" ? "home" : route][other];
+---
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href={url("home", lang)}>
+      <img src="/mark.svg" width="40" height="32" alt="" />
+      <span class="brand-text">
+        <span class="brand-name">WebPretzel</span>
+        <span class="brand-line"><span class="brand-sep">· </span>{ui.brandLine}</span>
+      </span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle-bars" aria-hidden="true"></span>
+      {ui.menu}
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label={lang === "fr" ? "Navigation principale" : "Main"}>
+      <ul class="nav-list">
+        <li>
+          <details class="nav-services" open={false}>
+            <summary class:list={{ active: inServices }}>{ui.nav.services}</summary>
+            <ul class="nav-sub">
+              {
+                serviceKeys.map((key) => (
+                  <li>
+                    <a href={url(key, lang)} aria-current={current(key)}>
+                      {ui.nav[key]}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </details>
+        </li>
+        <li><a href={url("construction", lang)} aria-current={current("construction")}>{ui.nav.construction}</a></li>
+        <li><a href={url("about", lang)} aria-current={current("about")}>{ui.nav.about}</a></li>
+        <li><a href={url("contact", lang)} aria-current={current("contact")}>{ui.nav.contact}</a></li>
+        <li class="nav-lang">
+          <a href={toggleHref} hreflang={other === "fr" ? "fr-CA" : "en-CA"} lang={other} aria-label={ui.switchLangLabel}>
+            {ui.switchLang}
+          </a>
+        </li>
+        <li class="nav-cta"><a class="btn btn-primary" href={url("contact", lang)}>{ui.navCta}</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  (() => {
+    const header = document.querySelector(".site-header");
+    const toggle = header.querySelector(".nav-toggle");
+    const services = header.querySelector(".nav-services");
+    header.classList.add("js");
+    toggle.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") !== "true";
+      toggle.setAttribute("aria-expanded", String(open));
+      header.classList.toggle("nav-open", open);
+    });
+    document.addEventListener("click", (e) => {
+      if (services.open && !services.contains(e.target)) services.open = false;
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && services.open) {
+        services.open = false;
+        services.querySelector("summary").focus();
+      }
+    });
+  })();
+</script>

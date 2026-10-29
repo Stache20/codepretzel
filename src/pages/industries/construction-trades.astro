@@ -1,0 +1,120 @@
+---
+import ServicePage from "../../layouts/ServicePage.astro";
+import { url } from "../../i18n/routes";
+---
+
+<ServicePage
+  lang="en"
+  route="construction"
+  title="Construction Job Costing & WIP Reports | WebPretzel"
+  description="Job costing, WIP and field service reporting for contractors and trades, built from the construction ERP data you already have. Montreal, Canada-wide."
+  crumb="Construction & trades"
+  eyebrow="Construction, trades & field service"
+  h1="Job costing and WIP reports for construction and trades"
+  lead="I build construction job costing reports, WIP schedules and field service reporting for contractors, trades and service companies. I spent years supporting the software these companies run on, so I know where the data lives and where it breaks."
+  who={{
+    heading: "Who I work with",
+    intro: "Small and mid-sized companies that run their jobs, crews and service calls through a construction or field-service ERP.",
+    items: [
+      "General contractors and subcontractors",
+      "Electrical, mechanical, plumbing and HVAC contractors",
+      "Field service companies with service contracts and work orders",
+      "Controllers who rebuild the WIP schedule in Excel every month-end",
+    ],
+  }}
+  problems={{
+    heading: "Problems I hear from contractors",
+    items: [
+      {
+        title: "Job profitability you see too late",
+        text: "You find out a job lost money at close-out, when it's too late to change anything. The data was there all along.",
+      },
+      {
+        title: "A WIP schedule that takes days",
+        text: "Every month-end someone exports job costs, fixes the spreadsheet and hopes the formulas still work.",
+      },
+      {
+        title: "Service contracts you can't read",
+        text: "Contract revenue sits in one place, labour, parts and travel in another. Nobody can say which contracts actually make money.",
+      },
+      {
+        title: "Labour hours that don't line up",
+        text: "Timesheets, payroll and job cost show different hours, and nobody trusts the labour numbers on a job.",
+      },
+    ],
+  }}
+  deliverables={{
+    heading: "Reports I build for contractors",
+    items: [
+      { title: "Job cost reports", text: "Budget, committed and actual cost by job, phase and cost code, with cost to complete and projected margin." },
+      { title: "WIP schedule", text: "Percent complete, earned revenue and over/under billing, produced automatically at every month-end." },
+      { title: "Service contract profitability", text: "Revenue against labour, parts and travel for each contract and customer." },
+      { title: "Work order reporting", text: "Open, aging and completed work orders, callbacks and turnaround time, by technician and branch." },
+      { title: "Technician and labour hours", text: "Hours by job, work order and employee, compared with estimates and with what was billed." },
+      { title: "Plan vs. actual dashboard", text: "Backlog, margin, billing and labour across all jobs in one view, refreshed daily." },
+    ],
+  }}
+  steps={{
+    heading: "How we get there",
+    items: [
+      { title: "Talk", text: "You tell me which numbers you need and when. I ask how your jobs, cost codes and contracts are set up." },
+      { title: "Review the data", text: "I look at what's in your ERP database and how reliable it is, with read-only access." },
+      { title: "Build", text: "Usually starting with job cost or WIP, so you see value quickly, then expanding from there." },
+      { title: "Support", text: "Training for your PMs and office staff, and adjustments as your business changes." },
+    ],
+  }}
+  faq={{
+    heading: "Construction reporting: common questions",
+    items: [
+      {
+        q: "Which construction software do you work with?",
+        a: "Most construction and field-service ERPs keep their data in SQL Server. If yours does, I can report on it. I'm independent and not tied to any software vendor.",
+      },
+      {
+        q: "Will the WIP schedule match what our accountant expects?",
+        a: "Yes. I build it with the method your accountant uses, for example cost-to-cost percent complete, and reconcile it to your general ledger.",
+      },
+      {
+        q: "Do you need to change how our ERP is set up?",
+        a: "No. I work read-only on the data you already have. If I find setup issues that distort your numbers, I'll point them out so you can decide what to do.",
+      },
+      {
+        q: "We're also switching systems. Can you help with that?",
+        a: "Yes. Data migration is one of my core services, and it's easier when reporting is planned at the same time.",
+      },
+      {
+        q: "Do you only work with construction companies?",
+        a: "No. Construction, trades and field service are where I have the deepest experience, but I work with small and mid-sized businesses in other industries too.",
+      },
+    ],
+  }}
+  cta={{
+    heading: "See job profitability while you can still act on it",
+    text: "Book a free 30-minute call. Tell me which report you'd fix first and I'll tell you what it would take.",
+  }}
+>
+  <section class="section section-alt" aria-labelledby="related">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="related">Related services</h2>
+      </div>
+      <div class="grid grid-3">
+        <a class="card service-card" href={url("reporting", "en")}>
+          <h3>Reporting & dashboards</h3>
+          <p>SQL Server reports and Power BI dashboards for job cost, WIP and service.</p>
+          <span class="more">Learn more</span>
+        </a>
+        <a class="card service-card" href={url("migration", "en")}>
+          <h3>Data migration</h3>
+          <p>Switching ERP? Bring your job and service history with you.</p>
+          <span class="more">Learn more</span>
+        </a>
+        <a class="card service-card" href={url("healthCheck", "en")}>
+          <h3>Data Health Check</h3>
+          <p>A fixed-scope audit of your ERP data before you build on it.</p>
+          <span class="more">Learn more</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</ServicePage>

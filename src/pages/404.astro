@@ -1,0 +1,28 @@
+---
+import Base from "../layouts/Base.astro";
+import { url } from "../i18n/routes";
+import { t } from "../i18n/ui";
+
+const lang = "en";
+const ui = t(lang);
+---
+
+<Base lang={lang} route="notFound" title="Page not found | WebPretzel" description="This page doesn't exist. Find SQL reporting, dashboards and data migration services from WebPretzel.">
+  <section class="section hero simple-page">
+    <div class="wrap narrow">
+      <span class="eyebrow">404</span>
+      <h1>Page not found</h1>
+      <p class="hero-lead">The page you're looking for doesn't exist or has moved. These might help:</p>
+      <ul class="checks">
+        <li><a href={url("reporting", lang)}>{ui.nav.reporting}</a></li>
+        <li><a href={url("migration", lang)}>{ui.nav.migration}</a></li>
+        <li><a href={url("healthCheck", lang)}>{ui.nav.healthCheck}</a></li>
+        <li><a href={url("webApps", lang)}>{ui.nav.webApps}</a></li>
+        <li><a href={url("construction", lang)}>{ui.nav.construction}</a></li>
+      </ul>
+      <div class="btn-row">
+        <a class="btn btn-primary" href={url("home", lang)}>Back to the home page</a>
+      </div>
+    </div>
+  </section>
+</Base>

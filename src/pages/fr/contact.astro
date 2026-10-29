@@ -1,0 +1,53 @@
+---
+import Base from "../../layouts/Base.astro";
+import Breadcrumbs from "../../components/Breadcrumbs.astro";
+import ContactForm from "../../components/ContactForm.astro";
+import { site } from "../../config/site";
+
+const lang = "fr";
+const crumbs = [{ name: "Contact", key: "contact" as const }];
+---
+
+<Base
+  lang={lang}
+  route="contact"
+  title="Contactez WebPretzel | Appel gratuit de 30 minutes"
+  description="Dites-moi ce qui ne fonctionne pas avec vos données. Réservez un appel gratuit de 30 minutes avec un consultant en données à Montréal."
+  crumbs={crumbs}
+>
+  <section class="hero page-hero">
+    <div class="wrap">
+      <Breadcrumbs lang={lang} crumbs={crumbs} />
+      <div class="page-hero-text">
+        <span class="eyebrow">Contact</span>
+        <h1>Contactez-moi</h1>
+        <p class="hero-lead">
+          Dites-moi ce qui ne fonctionne pas avec vos données. Je réponds habituellement en un jour ouvrable pour fixer un appel gratuit de
+          30 minutes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap contact-grid">
+      <div>
+        <h2 class="visually-hidden">Envoyer un message</h2>
+        <ContactForm lang={lang} />
+      </div>
+      <aside class="contact-aside" aria-labelledby="direct">
+        <h2 id="direct">Vous préférez le courriel ou le téléphone?</h2>
+        <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+        <p><a href={site.phoneHref}>{site.phone}</a></p>
+        <p class="muted">Montréal, Québec — au service des clients partout au Canada.</p>
+
+        <h2>La suite</h2>
+        <ol class="next-steps">
+          <li>Je réponds habituellement en un jour ouvrable.</li>
+          <li>Nous fixons un appel gratuit de 30 minutes au moment qui vous convient.</li>
+          <li>Vous obtenez une réponse franche : je peux vous aider ou non, et quelle serait une première étape.</li>
+        </ol>
+      </aside>
+    </div>
+  </section>
+</Base>

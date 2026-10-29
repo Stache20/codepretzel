@@ -1,0 +1,94 @@
+---
+import ServicePage from "../../layouts/ServicePage.astro";
+---
+
+<ServicePage
+  lang="en"
+  route="reporting"
+  title="SQL Reporting & Power BI Consultant in Montreal | WebPretzel"
+  description="Custom business reports and Power BI dashboards on SQL Server. A Montreal reporting consultant who builds numbers your team trusts and actually uses."
+  crumb="Reporting & dashboards"
+  eyebrow="Reporting & dashboards"
+  h1="SQL Server reporting and Power BI dashboards you can trust"
+  lead="I'm a SQL Server reporting and Power BI consultant in Montreal. I build custom business reports and dashboards on the data you already have, so the numbers are ready when you need them and everyone sees the same ones."
+  who={{
+    heading: "Who this is for",
+    intro: "Owners, controllers and operations managers at small and mid-sized companies who need better numbers without hiring a data team.",
+    items: [
+      "You run an ERP or accounting system with a SQL Server database underneath",
+      "One person knows how to pull the numbers, and everyone waits for them",
+      "You pay for Power BI but have few dashboards anyone actually opens",
+      "The bank, the board or your accountant expects reports every month",
+    ],
+  }}
+  problems={{
+    heading: "Typical reporting problems I fix",
+    items: [
+      {
+        title: "Totals that don't match",
+        text: "Sales has one number, accounting has another. Usually it's two queries with different rules. I define each number once, so every report agrees.",
+      },
+      {
+        title: "Hours of manual preparation",
+        text: "Exports, copy-paste and formula fixes every week. I replace that with reports that refresh on their own.",
+      },
+      {
+        title: "Standard reports that don't answer your questions",
+        text: "The built-in reports show what the software vendor thought you'd need. I build the custom business reports your team actually asks for.",
+      },
+      {
+        title: "Slow or broken reports",
+        text: "Queries that time out, reports that break after an update. I tune the SQL and put the logic where it's easy to maintain.",
+      },
+    ],
+  }}
+  deliverables={{
+    heading: "What you get",
+    items: [
+      { title: "Custom SQL Server reports", text: "Paginated reports, Excel or PDF. On demand, scheduled, or emailed to the right people every Monday." },
+      { title: "Power BI dashboards", text: "Interactive dashboards that refresh automatically. Not on Power BI? I can deliver a hosted web dashboard instead." },
+      { title: "A clean reporting layer", text: "Documented SQL views where each business rule is written once. New reports become much faster to build." },
+      { title: "Definitions everyone agrees on", text: "A short glossary: what counts as revenue, cost, margin or WIP, and where each number comes from." },
+      { title: "Training and handover", text: "Your team learns to use, filter and adjust the reports. You're not dependent on me for every change." },
+      { title: "Ongoing support", text: "When your software updates or your questions change, I adjust the reports so they keep working." },
+    ],
+  }}
+  steps={{
+    heading: "How a reporting project works",
+    items: [
+      { title: "Review", text: "I look at your current reports and database, and ask which decisions the numbers need to support." },
+      { title: "Define", text: "We agree on the definitions and write them down, so there's no debate later about what a number means." },
+      { title: "Build", text: "You see a first working report on your real data early. Then we refine it together, one report at a time." },
+      { title: "Hand over", text: "Documentation, training for your team, and support when you need changes." },
+    ],
+  }}
+  faq={{
+    heading: "Reporting and dashboards: common questions",
+    items: [
+      {
+        q: "Do I need Power BI?",
+        a: "No. Power BI is a good fit if you already use Microsoft 365, but I also build SQL Server Reporting Services reports, Excel reports that refresh on their own, and hosted web dashboards. I'll recommend what fits your setup.",
+      },
+      {
+        q: "Can you report on my ERP's database?",
+        a: "If it runs on SQL Server, as most construction and field-service ERPs do, yes. I work with read-only access, and against a reporting copy where possible, so your live system isn't affected.",
+      },
+      {
+        q: "Will the reports keep working after a software update?",
+        a: "I build reports on documented SQL views, so when an update changes a table there is one place to fix, not fifty reports. Support is available when that happens.",
+      },
+      {
+        q: "Can my team change the reports later?",
+        a: "Yes. You get the source, the documentation and training. Nothing is locked in.",
+      },
+      {
+        q: "How long does a reporting project take?",
+        a: "It depends on the scope. I aim to put a first useful report in front of you early, and I give you a timeline once we've scoped the work together.",
+      },
+    ],
+  }}
+  cta={{
+    heading: "Tired of reports nobody trusts?",
+    text: "Book a free 30-minute call. Bring an example of a report that's painful today and we'll talk through how to fix it.",
+  }}
+/>

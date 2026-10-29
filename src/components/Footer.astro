@@ -1,0 +1,58 @@
+---
+import { site } from "../config/site";
+import { url, type Lang } from "../i18n/routes";
+import { t } from "../i18n/ui";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const ui = t(lang);
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href={url("home", lang)}>
+        <img src="/mark.svg" width="40" height="32" alt="" loading="lazy" />
+        <span class="brand-text">
+          <span class="brand-name">WebPretzel</span>
+          <span class="brand-line"><span class="brand-sep">· </span>{ui.brandLine}</span>
+        </span>
+      </a>
+      <p>{ui.place}</p>
+    </div>
+
+    <div>
+      <h2 class="footer-heading">{ui.footerServices}</h2>
+      <ul class="footer-links">
+        <li><a href={url("reporting", lang)}>{ui.nav.reporting}</a></li>
+        <li><a href={url("migration", lang)}>{ui.nav.migration}</a></li>
+        <li><a href={url("healthCheck", lang)}>{ui.nav.healthCheck}</a></li>
+        <li><a href={url("webApps", lang)}>{ui.nav.webApps}</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="footer-heading">{ui.footerCompany}</h2>
+      <ul class="footer-links">
+        <li><a href={url("construction", lang)}>{ui.nav.construction}</a></li>
+        <li><a href={url("about", lang)}>{ui.nav.about}</a></li>
+        <li><a href={url("contact", lang)}>{ui.nav.contact}</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="footer-heading">{ui.footerContact}</h2>
+      <ul class="footer-links">
+        <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+        <li><a href={site.phoneHref}>{site.phone}</a></li>
+        <li><a href={site.linkedin} rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© {year} WebPretzel. {ui.rights}</p>
+  </div>
+</footer>

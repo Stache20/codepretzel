@@ -1,0 +1,120 @@
+---
+import ServicePage from "../../../layouts/ServicePage.astro";
+import { url } from "../../../i18n/routes";
+---
+
+<ServicePage
+  lang="fr"
+  route="construction"
+  title="Rapports de coût de revient en construction | WebPretzel"
+  description="Rapports de coût de revient, de travaux en cours et de chantier pour les entrepreneurs et les métiers, à partir des données de votre ERP. Montréal, Canada."
+  crumb="Construction et métiers"
+  eyebrow="Construction, métiers et service sur le terrain"
+  h1="Rapports de coût de revient et de travaux en cours pour la construction et les métiers"
+  lead="Je conçois des rapports de coût de revient, des sommaires de travaux en cours (TEC) et des rapports de chantier et de service pour les entrepreneurs, les gens de métier et les entreprises de service. J'ai passé des années à soutenir les logiciels qu'utilisent ces entreprises : je sais où se trouvent les données et où elles accrochent."
+  who={{
+    heading: "Avec qui je travaille",
+    intro: "Des PME qui gèrent leurs chantiers, leurs équipes et leurs appels de service dans un ERP de construction ou de service sur le terrain.",
+    items: [
+      "Entrepreneurs généraux et spécialisés",
+      "Entrepreneurs en électricité, mécanique, plomberie et CVC",
+      "Entreprises de service sur le terrain avec contrats de service et bons de travail",
+      "Contrôleurs qui refont le sommaire des travaux en cours dans Excel à chaque fin de mois",
+    ],
+  }}
+  problems={{
+    heading: "Ce que j'entends de la part des entrepreneurs",
+    items: [
+      {
+        title: "La rentabilité des chantiers, connue trop tard",
+        text: "Vous découvrez qu'un chantier a perdu de l'argent à la fermeture, quand il est trop tard pour changer quoi que ce soit. Les données étaient pourtant là.",
+      },
+      {
+        title: "Un sommaire des travaux en cours qui prend des jours",
+        text: "À chaque fin de mois, quelqu'un exporte les coûts, corrige le fichier Excel et espère que les formules fonctionnent encore.",
+      },
+      {
+        title: "Des contrats de service illisibles",
+        text: "Les revenus des contrats sont d'un côté, la main-d'œuvre, les pièces et les déplacements de l'autre. Personne ne peut dire quels contrats sont vraiment rentables.",
+      },
+      {
+        title: "Des heures de main-d'œuvre qui ne concordent pas",
+        text: "Les feuilles de temps, la paie et le coût de revient affichent des heures différentes, et personne ne se fie aux chiffres de main-d'œuvre d'un chantier.",
+      },
+    ],
+  }}
+  deliverables={{
+    heading: "Les rapports que je conçois pour les entrepreneurs",
+    items: [
+      { title: "Rapports de coût de revient", text: "Budget, coûts engagés et coûts réels par chantier, phase et code de coût, avec le coût à compléter et la marge projetée." },
+      { title: "Sommaire des travaux en cours", text: "Pourcentage d'avancement, revenus gagnés et surfacturation ou sous-facturation, produits automatiquement à chaque fin de mois." },
+      { title: "Rentabilité des contrats de service", text: "Les revenus comparés à la main-d'œuvre, aux pièces et aux déplacements, par contrat et par client." },
+      { title: "Rapports sur les bons de travail", text: "Bons ouverts, en retard et terminés, rappels et délais d'exécution, par technicien et par succursale." },
+      { title: "Heures des techniciens et de main-d'œuvre", text: "Les heures par chantier, bon de travail et employé, comparées aux estimations et à ce qui a été facturé." },
+      { title: "Tableau de bord prévu par rapport au réel", text: "Carnet de commandes, marge, facturation et main-d'œuvre de tous les chantiers en une seule vue, actualisée chaque jour." },
+    ],
+  }}
+  steps={{
+    heading: "Comment on y arrive",
+    items: [
+      { title: "Discuter", text: "Vous me dites de quels chiffres vous avez besoin et quand. Je vous demande comment vos chantiers, vos codes de coût et vos contrats sont structurés." },
+      { title: "Examiner les données", text: "J'examine le contenu de la base de données de votre ERP et sa fiabilité, avec un accès en lecture seule." },
+      { title: "Construire", text: "Habituellement en commençant par le coût de revient ou les travaux en cours, pour que vous en voyiez vite la valeur, puis en élargissant." },
+      { title: "Accompagner", text: "Formation pour vos chargés de projet et votre personnel de bureau, et ajustements à mesure que votre entreprise évolue." },
+    ],
+  }}
+  faq={{
+    heading: "Rapports pour la construction : questions fréquentes",
+    items: [
+      {
+        q: "Avec quels logiciels de construction travaillez-vous?",
+        a: "La plupart des ERP de construction et de service sur le terrain conservent leurs données dans SQL Server. Si c'est le cas du vôtre, je peux produire des rapports à partir de celui-ci. Je suis indépendant et je ne suis lié à aucun éditeur de logiciel.",
+      },
+      {
+        q: "Le sommaire des travaux en cours correspondra-t-il à ce qu'attend notre comptable?",
+        a: "Oui. Je le construis selon la méthode qu'utilise votre comptable, par exemple le pourcentage d'avancement selon les coûts engagés, et je le rapproche de votre grand livre.",
+      },
+      {
+        q: "Devez-vous modifier la configuration de notre ERP?",
+        a: "Non. Je travaille en lecture seule sur les données que vous avez déjà. Si je trouve des problèmes de configuration qui faussent vos chiffres, je vous les signale pour que vous décidiez quoi faire.",
+      },
+      {
+        q: "Nous changeons aussi de système. Pouvez-vous nous aider?",
+        a: "Oui. La migration de données est l'un de mes services principaux, et c'est plus simple quand les rapports sont planifiés en même temps.",
+      },
+      {
+        q: "Travaillez-vous seulement avec des entreprises de construction?",
+        a: "Non. La construction, les métiers et le service sur le terrain sont les secteurs où j'ai le plus d'expérience, mais je travaille aussi avec des PME d'autres secteurs.",
+      },
+    ],
+  }}
+  cta={{
+    heading: "Voyez la rentabilité de vos chantiers pendant qu'il est encore temps d'agir",
+    text: "Réservez un appel gratuit de 30 minutes. Dites-moi quel rapport vous corrigeriez en premier et je vous dirai ce que ça demanderait.",
+  }}
+>
+  <section class="section section-alt" aria-labelledby="related">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="related">Services connexes</h2>
+      </div>
+      <div class="grid grid-3">
+        <a class="card service-card" href={url("reporting", "fr")}>
+          <h3>Rapports et tableaux de bord</h3>
+          <p>Rapports SQL Server et tableaux de bord Power BI pour le coût de revient, les travaux en cours et le service.</p>
+          <span class="more">En savoir plus</span>
+        </a>
+        <a class="card service-card" href={url("migration", "fr")}>
+          <h3>Migration de données</h3>
+          <p>Vous changez d'ERP? Conservez l'historique de vos chantiers et de votre service.</p>
+          <span class="more">En savoir plus</span>
+        </a>
+        <a class="card service-card" href={url("healthCheck", "fr")}>
+          <h3>Bilan de santé des données</h3>
+          <p>Un audit à portée fixe des données de votre ERP avant de bâtir dessus.</p>
+          <span class="more">En savoir plus</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</ServicePage>

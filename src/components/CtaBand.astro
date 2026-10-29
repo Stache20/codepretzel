@@ -1,0 +1,26 @@
+---
+import { url, type Lang } from "../i18n/routes";
+import { t } from "../i18n/ui";
+
+interface Props {
+  lang: Lang;
+  heading: string;
+  text: string;
+}
+const { lang, heading, text } = Astro.props;
+const ui = t(lang);
+---
+
+<section class="section cta-band" aria-labelledby="cta-heading">
+  <div class="wrap">
+    <div class="cta-box">
+      <div>
+        <h2 id="cta-heading">{heading}</h2>
+        <p>{text}</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-primary" href={url("contact", lang)}>{ui.cta}</a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,135 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { site } from "../config/site";
+import { routes, unlisted, type Lang, type RouteKey } from "../i18n/routes";
+import { t } from "../i18n/ui";
+
+export interface Crumb {
+  name: string;
+  key: RouteKey;
+}
+export interface FaqItem {
+  q: string;
+  a: string;
+}
+
+interface Props {
+  lang: Lang;
+  route: RouteKey;
+  title: string;
+  description: string;
+  // Inner pages pass their trail (excluding Home); renders BreadcrumbList JSON-LD.
+  crumbs?: Crumb[];
+  // Pages with an FAQ section pass it here for FAQPage JSON-LD.
+  faq?: FaqItem[];
+}
+
+const { lang, route, title, description, crumbs, faq } = Astro.props;
+
+if (title.length > 60) throw new Error(`Title over 60 chars (${title.length}) on ${route}/${lang}: ${title}`);
+if (description.length > 155) throw new Error(`Description over 155 chars (${description.length}) on ${route}/${lang}`);
+
+const abs = (path: string) => new URL(path, site.url).href;
+const canonical = abs(routes[route][lang]);
+const indexable = !unlisted.includes(route);
+const ui = t(lang);
+const ogImage = abs(`/og-${lang}.png`);
+const locale = lang === "fr" ? "fr_CA" : "en_CA";
+
+const business = {
+  "@type": "ProfessionalService",
+  "@id": `${site.url}/#business`,
+  name: site.name,
+  url: abs(routes.home[lang]),
+  logo: abs("/apple-touch-icon.png"),
+  image: abs(`/og-${lang}.png`),
+  description,
+  email: site.email,
+  telephone: site.phone,
+  founder: { "@type": "Person", name: site.founder },
+  areaServed: [
+    { "@type": "City", name: "Montreal" },
+    { "@type": "State", name: "Quebec" },
+    { "@type": "Country", name: "Canada" },
+  ],
+  availableLanguage: ["en", "fr"],
+  sameAs: [site.linkedin],
+};
+
+const graph: object[] = [business];
+if (crumbs?.length) {
+  const trail = [{ name: ui.breadcrumbHome, key: "home" as RouteKey }, ...crumbs];
+  graph.push({
+    "@type": "BreadcrumbList",
+    itemListElement: trail.map((c, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: c.name,
+      item: abs(routes[c.key][lang]),
+    })),
+  });
+}
+if (faq?.length) {
+  graph.push({
+    "@type": "FAQPage",
+    mainEntity: faq.map(({ q, a }) => ({
+      "@type": "Question",
+      name: q,
+      acceptedAnswer: { "@type": "Answer", text: a },
+    })),
+  });
+}
+const jsonLd = JSON.stringify({ "@context": "https://schema.org", "@graph": graph });
+---
+
+<html lang={lang === "fr" ? "fr-CA" : "en-CA"}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {indexable ? <link rel="canonical" href={canonical} /> : <meta name="robots" content="noindex" />}
+    {
+      indexable && (
+        <>
+          <link rel="alternate" hreflang="en-CA" href={abs(routes[route].en)} />
+          <link rel="alternate" hreflang="fr-CA" href={abs(routes[route].fr)} />
+          <link rel="alternate" hreflang="x-default" href={abs(routes[route].en)} />
+        </>
+      )
+    }
+    {site.googleSiteVerification && <meta name="google-site-verification" content={site.googleSiteVerification} />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content={locale} />
+    <meta property="og:locale:alternate" content={lang === "fr" ? "en_CA" : "fr_CA"} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta name="theme-color" content="#14161a" />
+
+    <script type="application/ld+json" set:html={jsonLd} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{ui.skip}</a>
+    <Header lang={lang} route={route} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer lang={lang} />
+  </body>
+</html>

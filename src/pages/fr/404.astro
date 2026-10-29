@@ -1,0 +1,33 @@
+---
+import Base from "../../layouts/Base.astro";
+import { url } from "../../i18n/routes";
+import { t } from "../../i18n/ui";
+
+const lang = "fr";
+const ui = t(lang);
+---
+
+<Base
+  lang={lang}
+  route="notFound"
+  title="Page introuvable | WebPretzel"
+  description="Cette page n'existe pas. Découvrez les services de rapports SQL, de tableaux de bord et de migration de données de WebPretzel."
+>
+  <section class="section hero simple-page">
+    <div class="wrap narrow">
+      <span class="eyebrow">404</span>
+      <h1>Page introuvable</h1>
+      <p class="hero-lead">La page que vous cherchez n'existe pas ou a été déplacée. Ces liens pourraient vous aider :</p>
+      <ul class="checks">
+        <li><a href={url("reporting", lang)}>{ui.nav.reporting}</a></li>
+        <li><a href={url("migration", lang)}>{ui.nav.migration}</a></li>
+        <li><a href={url("healthCheck", lang)}>{ui.nav.healthCheck}</a></li>
+        <li><a href={url("webApps", lang)}>{ui.nav.webApps}</a></li>
+        <li><a href={url("construction", lang)}>{ui.nav.construction}</a></li>
+      </ul>
+      <div class="btn-row">
+        <a class="btn btn-primary" href={url("home", lang)}>Retour à l'accueil</a>
+      </div>
+    </div>
+  </section>
+</Base>

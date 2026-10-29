@@ -1,0 +1,23 @@
+---
+import Base from "../../layouts/Base.astro";
+import { url } from "../../i18n/routes";
+
+const lang = "fr";
+---
+
+<Base lang={lang} route="thanks" title="Message envoyé | WebPretzel" description="Merci d'avoir communiqué avec WebPretzel. Je réponds habituellement en un jour ouvrable.">
+  <section class="section hero simple-page">
+    <div class="wrap narrow">
+      <span class="eyebrow">Message envoyé</span>
+      <h1>Merci, votre message est bien reçu.</h1>
+      <p class="hero-lead">
+        Je réponds habituellement en un jour ouvrable pour fixer un moment pour discuter. Si c'est urgent, appelez-moi au numéro indiqué en bas
+        de page.
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href={url("home", lang)}>Retour à l'accueil</a>
+        <a class="btn btn-secondary" href={url("construction", lang)}>Rapports pour la construction et les métiers</a>
+      </div>
+    </div>
+  </section>
+</Base>

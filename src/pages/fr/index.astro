@@ -1,0 +1,154 @@
+---
+import Base from "../../layouts/Base.astro";
+import DashboardArt from "../../components/DashboardArt.astro";
+import ServiceIcon from "../../components/ServiceIcon.astro";
+import SelectedWork from "../../components/SelectedWork.astro";
+import CtaBand from "../../components/CtaBand.astro";
+import { url } from "../../i18n/routes";
+import { t } from "../../i18n/ui";
+
+const lang = "fr";
+const ui = t(lang);
+
+const pains = [
+  { title: "Des rapports auxquels personne ne se fie", text: "Deux rapports, deux totaux différents. Les gens arrêtent de les consulter et retournent à leurs propres fichiers Excel." },
+  { title: "Des exportations Excel tous les lundis", text: "Quelqu'un passe une demi-journée à exporter, coller et corriger des formules avant que quiconque voie les chiffres de la semaine." },
+  { title: "Un changement de système, et la peur de perdre l'historique", text: "Un nouvel ERP s'en vient. Des années de chantiers, de clients et de coûts doivent suivre, sans erreur." },
+  { title: "La rentabilité des chantiers, connue trop tard", text: "Vous apprenez qu'un chantier a perdu de l'argent une fois fermé, quand il est trop tard pour agir." },
+];
+
+const services = [
+  { key: "reporting", title: "Rapports et tableaux de bord", text: "Rapports SQL Server et tableaux de bord Power BI branchés sur vos données en direct. Définis une fois, actualisés automatiquement, fiables pour tout le monde." },
+  { key: "migration", title: "Migration de données", text: "Changez de système sans perdre votre historique. Correspondance des champs, nettoyage, chargements d'essai et un rapprochement que vous pouvez approuver." },
+  { key: "healthCheck", title: "Bilan de santé des données", text: "Un examen à portée fixe de votre base de données et de vos rapports. Vous recevez une liste écrite des problèmes et des priorités.", tag: "Bon point de départ" },
+  { key: "webApps", title: "Applications et sites web", text: "Portails clients, places de marché, outils internes et sites d'entreprise, conçus autour de vos données." },
+] as const;
+
+const steps = [
+  { title: "Discuter", text: "Un appel gratuit de 30 minutes. Vous m'expliquez ce qui ne fonctionne pas. Je pose des questions et je vous dis franchement si je peux vous aider." },
+  { title: "Cadrer", text: "J'examine vos données et je mets par écrit exactement ce que je livrerai, les délais et ce dont j'ai besoin de votre part." },
+  { title: "Livrer", text: "Je travaille par petites étapes et je vous montre rapidement des résultats concrets, sur vos vraies données, pas des maquettes." },
+  { title: "Accompagner", text: "Documentation, transfert en bonne et due forme à votre équipe et soutien quand vous avez besoin de changements." },
+];
+---
+
+<Base
+  lang={lang}
+  route="home"
+  title="Consultant SQL et en données à Montréal | WebPretzel"
+  description="Rapports SQL, tableaux de bord Power BI et migration de données pour les PME. Consultant en données à Montréal, spécialisé en construction et métiers."
+>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>
+          <span class="eyebrow">Consultant SQL et en données à Montréal</span>
+          Vos données d'affaires, enfin utilisables.
+        </h1>
+        <p class="hero-lead">
+          Je conçois des rapports SQL, des tableaux de bord et des migrations de données pour les petites et moyennes entreprises, avec une
+          solide expérience en construction, dans les métiers et en service sur le terrain. Vous obtenez des chiffres fiables, sans les
+          exportations Excel du lundi matin.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href={url("contact", lang)}>{ui.cta}</a>
+          <a class="btn btn-secondary" href="#services">Voir mes services</a>
+        </div>
+        <p class="hero-meta">{ui.place}</p>
+      </div>
+      <DashboardArt lang={lang} />
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="pains">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="pains">Ça vous dit quelque chose?</h2>
+        <p>La plupart des entreprises avec qui je travaille ont beaucoup de données. Le problème, c'est d'en tirer des chiffres auxquels tout le monde se fie.</p>
+      </div>
+      <div class="grid grid-4">
+        {
+          pains.map((p) => (
+            <div class="card pain">
+              <h3>{p.title}</h3>
+              <p>{p.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="services" aria-labelledby="services-heading">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="services-heading">Consultation SQL et en données, et les applications qui vont avec</h2>
+        <p>Les données d'abord. Quand vos données ont besoin d'une interface, je la construis aussi.</p>
+      </div>
+      <div class="grid grid-4">
+        {
+          services.map((s) => (
+            <a class="card service-card" href={url(s.key, lang)}>
+              <span class="service-icon">
+                <ServiceIcon name={s.key} />
+              </span>
+              {"tag" in s && <span class="tag">{s.tag}</span>}
+              <h3>{s.title}</h3>
+              <p>{s.text}</p>
+              <span class="more">En savoir plus</span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="process">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="process">Ma façon de travailler</h2>
+        <p>Pas de longues propositions ni de surprises. Une démarche claire, du premier appel au soutien continu.</p>
+      </div>
+      <ol class="steps grid grid-4">
+        {
+          steps.map((s) => (
+            <li>
+              <h3>{s.title}</h3>
+              <p>{s.text}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section-dark" aria-labelledby="construction">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow">Construction, métiers et service sur le terrain</span>
+        <h2 id="construction">Des rapports pensés pour la réalité des entrepreneurs</h2>
+        <p>
+          J'ai passé des années au cœur des logiciels de construction et de service sur le terrain, à soutenir les entreprises qui les
+          utilisent. Je connais les données derrière le coût de revient, les travaux en cours et les contrats de service, et je sais où ça
+          accroche habituellement.
+        </p>
+        <a class="btn btn-primary" href={url("construction", lang)}>Rapports pour la construction et les métiers</a>
+      </div>
+      <ul class="checks">
+        <li>Rapports de coût de revient et de coût à compléter</li>
+        <li>Sommaires des travaux en cours (TEC) fiables pour votre comptable et votre banque</li>
+        <li>Rentabilité des contrats de service et des bons de travail</li>
+        <li>Prévu par rapport au réel, par chantier, phase et code de coût</li>
+        <li>Heures des techniciens et de main-d'œuvre par chantier et par bon de travail</li>
+      </ul>
+    </div>
+  </section>
+
+  <SelectedWork lang={lang} />
+
+  <CtaBand
+    lang={lang}
+    heading="Regardons vos données ensemble"
+    text="Dites-moi ce qui vous ralentit. En 30 minutes, vous saurez si je peux vous aider et quelle serait une première étape sensée. Sans frais, sans engagement."
+  />
+</Base>

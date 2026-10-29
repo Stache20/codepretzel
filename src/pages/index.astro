@@ -1,0 +1,152 @@
+---
+import Base from "../layouts/Base.astro";
+import DashboardArt from "../components/DashboardArt.astro";
+import ServiceIcon from "../components/ServiceIcon.astro";
+import SelectedWork from "../components/SelectedWork.astro";
+import CtaBand from "../components/CtaBand.astro";
+import { url } from "../i18n/routes";
+import { t } from "../i18n/ui";
+
+const lang = "en";
+const ui = t(lang);
+
+const pains = [
+  { title: "Reports nobody trusts", text: "Two reports, two different totals. People stop using them and go back to their own spreadsheets." },
+  { title: "Excel exports every Monday", text: "Someone spends half a day exporting, pasting and fixing formulas before anyone sees last week's numbers." },
+  { title: "Switching systems, afraid to lose history", text: "A new ERP is coming. Years of jobs, customers and costs need to come with it, correctly." },
+  { title: "Job profitability you see too late", text: "You find out a job lost money after it closed, when it's too late to do anything about it." },
+];
+
+const services = [
+  { key: "reporting", title: "Reporting & dashboards", text: "SQL Server reports and Power BI dashboards built on your live data. Defined once, refreshed automatically, trusted by everyone." },
+  { key: "migration", title: "Data migration", text: "Move to a new system without losing your history. Mapping, cleanup, test loads and a reconciliation you can sign off on." },
+  { key: "healthCheck", title: "Data Health Check", text: "A fixed-scope review of your database and reports. You get a written list of problems and what to fix first.", tag: "Good place to start" },
+  { key: "webApps", title: "Web apps & sites", text: "Client portals, marketplaces, internal tools and business websites, built around your data." },
+] as const;
+
+const steps = [
+  { title: "Talk", text: "A free 30-minute call. You explain what isn't working. I ask questions and tell you honestly whether I can help." },
+  { title: "Scope", text: "I look at your data and write down exactly what I'll deliver, how long it takes and what I need from you." },
+  { title: "Deliver", text: "I build in small steps and show you working results early, on your real data, not mock-ups." },
+  { title: "Support", text: "Documentation, a proper handover to your team, and support when you need changes later." },
+];
+---
+
+<Base
+  lang={lang}
+  route="home"
+  title="SQL & Data Consultant in Montreal | WebPretzel"
+  description="SQL reporting, Power BI dashboards and data migration for small and mid-sized businesses. Montreal data consultant specializing in construction and trades."
+>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1>
+          <span class="eyebrow">SQL &amp; data consultant in Montreal</span>
+          Your business data, finally usable.
+        </h1>
+        <p class="hero-lead">
+          I build SQL reporting, dashboards and data migrations for small and mid-sized companies, with deep experience in construction,
+          trades and field service. You get numbers you can trust, without the Monday-morning Excel exports.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href={url("contact", lang)}>{ui.cta}</a>
+          <a class="btn btn-secondary" href="#services">See what I do</a>
+        </div>
+        <p class="hero-meta">{ui.place}</p>
+      </div>
+      <DashboardArt lang={lang} />
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="pains">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="pains">Sound familiar?</h2>
+        <p>Most companies I work with have plenty of data. The problem is getting it out in a form people trust.</p>
+      </div>
+      <div class="grid grid-4">
+        {
+          pains.map((p) => (
+            <div class="card pain">
+              <h3>{p.title}</h3>
+              <p>{p.text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="services" aria-labelledby="services-heading">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="services-heading">SQL and data consulting, plus the apps around it</h2>
+        <p>Data work comes first. When your data needs a front end, I build that too.</p>
+      </div>
+      <div class="grid grid-4">
+        {
+          services.map((s) => (
+            <a class="card service-card" href={url(s.key, lang)}>
+              <span class="service-icon">
+                <ServiceIcon name={s.key} />
+              </span>
+              {"tag" in s && <span class="tag">{s.tag}</span>}
+              <h3>{s.title}</h3>
+              <p>{s.text}</p>
+              <span class="more">Learn more</span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="process">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 id="process">How I work</h2>
+        <p>No long proposals and no surprises. A clear process from the first call to ongoing support.</p>
+      </div>
+      <ol class="steps grid grid-4">
+        {
+          steps.map((s) => (
+            <li>
+              <h3>{s.title}</h3>
+              <p>{s.text}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section-dark" aria-labelledby="construction">
+    <div class="wrap split">
+      <div>
+        <span class="eyebrow">Construction, trades &amp; field service</span>
+        <h2 id="construction">Reporting built for how contractors actually work</h2>
+        <p>
+          I spent years inside construction and field-service software, supporting the companies that run on it. I know the data behind job
+          costing, WIP and service contracts, and where it usually goes wrong.
+        </p>
+        <a class="btn btn-primary" href={url("construction", lang)}>Construction &amp; trades reporting</a>
+      </div>
+      <ul class="checks">
+        <li>Job costing and cost-to-complete reports</li>
+        <li>WIP schedules your accountant and bank can rely on</li>
+        <li>Service contract and work order profitability</li>
+        <li>Plan vs. actual by job, phase and cost code</li>
+        <li>Technician and labour hours by job and work order</li>
+      </ul>
+    </div>
+  </section>
+
+  <SelectedWork lang={lang} />
+
+  <CtaBand
+    lang={lang}
+    heading="Let's look at your data together"
+    text="Tell me what's slowing you down. In 30 minutes you'll know whether I can help and what a sensible first step looks like. No cost, no obligation."
+  />
+</Base>

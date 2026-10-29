@@ -1,0 +1,48 @@
+---
+// Anonymized case studies from src/data/selected-work.json.
+// Renders nothing while the file holds an empty list. Entry shape:
+// {
+//   "en": { "sector": "Electrical contractor", "title": "...", "summary": "...", "outcome": "..." },
+//   "fr": { "sector": "Entrepreneur électricien", "title": "...", "summary": "...", "outcome": "..." }
+// }
+import work from "../data/selected-work.json";
+import type { Lang } from "../i18n/routes";
+
+interface Entry {
+  sector: string;
+  title: string;
+  summary: string;
+  outcome: string;
+}
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+const items = (work as Record<Lang, Entry>[]).map((item) => item[lang]).filter(Boolean);
+const heading = lang === "fr" ? "Réalisations choisies" : "Selected work";
+const outcomeLabel = lang === "fr" ? "Résultat :" : "Result:";
+---
+
+{
+  items.length > 0 && (
+    <section class="section" aria-labelledby="selected-work">
+      <div class="wrap">
+        <div class="section-head">
+          <h2 id="selected-work">{heading}</h2>
+        </div>
+        <div class="grid grid-3">
+          {items.map((item) => (
+            <article class="card">
+              <span class="eyebrow">{item.sector}</span>
+              <h3>{item.title}</h3>
+              <p>{item.summary}</p>
+              <p>
+                <strong>{outcomeLabel}</strong> {item.outcome}
+              </p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}

@@ -1,0 +1,25 @@
+---
+import type { FaqItem } from "../layouts/Base.astro";
+
+interface Props {
+  heading: string;
+  items: FaqItem[];
+}
+const { heading, items } = Astro.props;
+---
+
+<section class="section section-alt" aria-labelledby="faq">
+  <div class="wrap narrow">
+    <h2 id="faq">{heading}</h2>
+    <div class="faq">
+      {
+        items.map((item) => (
+          <div class="faq-item">
+            <h3>{item.q}</h3>
+            <p>{item.a}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,158 @@
+---
+// Netlify Forms: detected at deploy time from the static HTML. Both languages post to the
+// same "contact" form; the hidden "language" field tells you which page it came from.
+import { url, type Lang } from "../i18n/routes";
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+
+const l =
+  lang === "fr"
+    ? {
+        name: "Nom",
+        email: "Courriel",
+        company: "Entreprise",
+        phone: "Téléphone",
+        optional: "facultatif",
+        topic: "Comment puis-je vous aider?",
+        choose: "Choisissez une option",
+        topics: {
+          reporting: "Rapports et tableaux de bord",
+          migration: "Migration de données",
+          "health-check": "Bilan de santé des données",
+          "web-app": "Application ou site web",
+          other: "Autre",
+        },
+        message: "Message",
+        messageHint: "Quelques lignes suffisent : votre situation, vos systèmes et ce que vous aimeriez améliorer.",
+        honeypot: "Ne remplissez pas ce champ :",
+        submit: "Envoyer le message",
+        privacy: "Vos coordonnées servent uniquement à vous répondre.",
+      }
+    : {
+        name: "Name",
+        email: "Email",
+        company: "Company",
+        phone: "Phone",
+        optional: "optional",
+        topic: "What can I help with?",
+        choose: "Choose an option",
+        topics: {
+          reporting: "Reporting & dashboards",
+          migration: "Data migration",
+          "health-check": "Data health check",
+          "web-app": "Web app or site",
+          other: "Other",
+        },
+        message: "Message",
+        messageHint: "A few lines is enough: your situation, your systems and what you'd like to improve.",
+        honeypot: "Don't fill this out:",
+        submit: "Send message",
+        privacy: "Your details are only used to reply to you.",
+      };
+---
+
+<form class="contact-form" name="contact" method="POST" action={url("thanks", lang)} data-netlify="true" netlify-honeypot="bot-field">
+  <input type="hidden" name="form-name" value="contact" />
+  <input type="hidden" name="language" value={lang} />
+  <p class="visually-hidden">
+    <label>{l.honeypot} <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+  </p>
+
+  <div class="field-row">
+    <div class="field">
+      <label for="name">{l.name}</label>
+      <input id="name" name="name" type="text" autocomplete="name" required />
+    </div>
+    <div class="field">
+      <label for="email">{l.email}</label>
+      <input id="email" name="email" type="email" autocomplete="email" required />
+    </div>
+  </div>
+
+  <div class="field-row">
+    <div class="field">
+      <label for="company">{l.company}</label>
+      <input id="company" name="company" type="text" autocomplete="organization" required />
+    </div>
+    <div class="field">
+      <label for="phone">{l.phone} <span class="optional">({l.optional})</span></label>
+      <input id="phone" name="phone" type="tel" autocomplete="tel" />
+    </div>
+  </div>
+
+  <div class="field">
+    <label for="topic">{l.topic}</label>
+    <select id="topic" name="topic" required>
+      <option value="">{l.choose}</option>
+      {Object.entries(l.topics).map(([value, label]) => <option value={value}>{label}</option>)}
+    </select>
+  </div>
+
+  <div class="field">
+    <label for="message">{l.message}</label>
+    <textarea id="message" name="message" rows="6" required aria-describedby="message-hint"></textarea>
+    <p class="hint" id="message-hint">{l.messageHint}</p>
+  </div>
+
+  <button class="btn btn-primary" type="submit">{l.submit}</button>
+  <p class="hint">{l.privacy}</p>
+</form>
+
+<style>
+  .contact-form {
+    display: grid;
+    gap: 1.1rem;
+  }
+  .field-row {
+    display: grid;
+    gap: 1.1rem;
+  }
+  @media (min-width: 40rem) {
+    .field-row {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  .field {
+    display: grid;
+    gap: 0.4rem;
+  }
+  label {
+    font-weight: 650;
+  }
+  .optional {
+    font-weight: 400;
+    color: var(--muted);
+  }
+  input,
+  select,
+  textarea {
+    font: inherit;
+    color: var(--ink);
+    background: #fff;
+    border: 1.5px solid #b9bcc3;
+    border-radius: 8px;
+    padding: 0.7rem 0.8rem;
+    min-height: 48px;
+    width: 100%;
+  }
+  textarea {
+    resize: vertical;
+  }
+  input:focus-visible,
+  select:focus-visible,
+  textarea:focus-visible {
+    border-color: var(--ink);
+    outline-offset: 1px;
+  }
+  .hint {
+    font-size: 0.92rem;
+    color: var(--muted);
+    margin: 0;
+  }
+  button {
+    justify-self: start;
+  }
+</style>

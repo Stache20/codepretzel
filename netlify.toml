@@ -1,2 +1,28 @@
-node_bundler = "esbuild"
-node_version = "18"
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Old single-page-app URLs
+[[redirects]]
+  from = "/services"
+  to = "/#services"
+  status = 301
+
+[[redirects]]
+  from = "/blog"
+  to = "/"
+  status = 301
+
+# French visitors get the French 404 page; everyone else gets /404.html.
+[[redirects]]
+  from = "/fr/*"
+  to = "/fr/404/"
+  status = 404
+
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
